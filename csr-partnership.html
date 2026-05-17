@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSR Partnership | Choudhari EduHealth India Foundation</title>
+<meta name="description" content="Partner with Choudhari EduHealth India Foundation for Schedule VII(i)-aligned CSR. 80G certified, full impact reporting, and pan-India healthcare reach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .hero-accent { color: var(--blue); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+  .why-card { background: white; border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-card); }
+  .why-icon { font-size: 28px; margin-bottom: 14px; }
+  .why-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .why-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+  .tiers-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; }
+  .tier-card { background: white; border: 1px solid var(--gray-100); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card); }
+  .tier-top { padding: 24px 24px 20px; border-bottom: 1px solid var(--gray-100); }
+  .tier-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; margin-bottom: 12px; }
+  .tier-badge.bronze { background: #FDF3E7; color: #8B5E2A; }
+  .tier-badge.silver { background: #F0F3F9; color: #4A5B6E; }
+  .tier-badge.gold { background: #FFFBEB; color: #916500; }
+  .tier-badge.platinum { background: var(--blue-light); color: var(--blue); }
+  .tier-name { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .tier-amount { font-size: 14px; color: var(--text-secondary); }
+  .tier-amount strong { color: var(--navy); font-size: 18px; }
+  .tier-body { padding: 20px 24px 24px; }
+  .tier-feature { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5; }
+  .tier-check { color: var(--blue); font-weight: 700; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .tier-cta { display: block; text-align: center; background: var(--blue); color: white; padding: 11px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 16px; transition: var(--transition); }
+  .tier-cta:hover { background: #0044aa; }
+  .tier-card.featured { border-color: var(--blue); box-shadow: 0 0 0 2px rgba(0,85,204,0.15), var(--shadow-lg); }
+  .tier-card.featured .tier-top { background: var(--navy); }
+  .tier-card.featured .tier-name { color: white; }
+  .tier-card.featured .tier-amount { color: rgba(255,255,255,0.6); }
+  .tier-card.featured .tier-amount strong { color: var(--blue-mid); }
+  .tier-featured-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 8px; }
+
+  .use-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; }
+  .use-card { background: white; border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-card); display: flex; gap: 18px; }
+  .use-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); background: var(--blue-light); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .use-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+  .use-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  .form-section { background: var(--gray-50); }
+  .form-wrap { max-width: var(--max-w); margin: 0 auto; padding: 80px 32px; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: start; }
+  .form-card { background: white; border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-lg); }
+  .form-card-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .form-card-sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.6; }
+
+  .faq-list { margin-top: 40px; }
+  .faq-item { border-bottom: 1px solid var(--gray-100); padding: 20px 0; cursor: pointer; }
+  .faq-item:first-child { border-top: 1px solid var(--gray-100); }
+  .faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 15px; font-weight: 600; color: var(--navy); }
+  .faq-arrow { font-size: 18px; color: var(--blue); transition: var(--transition); flex-shrink: 0; }
+  .faq-a { font-size: 14px; color: var(--text-secondary); line-height: 1.75; padding-top: 12px; display: none; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-arrow { transform: rotate(45deg); }
+
+  .sched-box { background: var(--blue); color: white; border-radius: var(--radius-lg); padding: 28px 32px; margin-top: 32px; }
+  .sched-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .sched-desc { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+  .sched-ref { font-family: 'Courier New', monospace; font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px; }
+
+  @media (max-width: 960px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .tiers-grid { grid-template-columns: 1fr; }
+    .use-grid { grid-template-columns: 1fr; }
+    .form-wrap { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Choudhari <span>EduHealth</span><br>India Foundation</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
+      <li><a href="bloodconnect.html">BloodConnect</a></li>
+      <li><a href="csr-partnership.html" class="nav-cta active">CSR Partnership</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">CSR Partnership</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="section-label">For Corporate Partners</div>
+    <h1>Partner with us. <span>Make your CSR count.</span></h1>
+    <p class="page-hero-sub" style="max-width:680px;">Your CSR mandate can do more than check a box. Through Choudhari EduHealth, your funds go directly into field operations — with full 80G compliance, Schedule VII(i) alignment, and monthly impact reporting that your board and regulator actually wants to see.</p>
+    <div class="btn-row">
+      <a href="#enquire" class="btn-primary">Send a Partnership Enquiry</a>
+      <a href="#tiers" class="btn-outline">View Partnership Tiers</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div class="strip-stat"><div class="strip-stat-n">80G</div><div class="strip-stat-l">Provisional · Valid to AY 2028-29</div></div>
+    <div class="strip-stat"><div class="strip-stat-n">Sch. VII(i)</div><div class="strip-stat-l">Companies Act — Healthcare</div></div>
+    <div class="strip-stat"><div class="strip-stat-n">Section 8</div><div class="strip-stat-l">Registered Non-Profit</div></div>
+    <div class="strip-stat"><div class="strip-stat-n">48 hrs</div><div class="strip-stat-l">Response Commitment</div></div>
+    <div class="strip-stat"><div class="strip-stat-n">100%</div><div class="strip-stat-l">Funds to Field Operations</div></div>
+  </div>
+</div>
+
+<!-- WHY PARTNER -->
+<section class="section" style="background:white;">
+  <div class="section-inner">
+    <div class="section-label">Why Partner With Us</div>
+    <h2 class="section-h">Built for corporate compliance,<br>not just good intentions.</h2>
+    <p class="section-sub">We know what a CSR committee needs — because our founders have sat in those rooms. Every aspect of our partnership structure is designed around your documentation, timeline, and board reporting requirements.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">📋</div>
+        <div class="why-title">Full 80G Documentation</div>
+        <div class="why-desc">Every donation comes with an 80G receipt, fund utilisation certificate, and supporting statements for your CA and compliance team. Provisional certification valid through AY 2028–2029. 50% tax deduction on all contributions.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📊</div>
+        <div class="why-title">Monthly Impact Reports</div>
+        <div class="why-desc">Receive detailed monthly reports: patient counts, village coverage, GPS-tagged field logs, medicine dispensed, and photo/video testimonials. Everything formatted for your CSR committee and board presentation.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚖️</div>
+        <div class="why-title">Schedule VII(i) Alignment</div>
+        <div class="why-desc">Both our programmes — mobile OPD and blood access — align directly with Schedule VII(i) of the Companies Act 2013: "promoting health care including preventive health care." No grey areas for your legal team.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <div class="why-title">Measurable, Auditable Outcomes</div>
+        <div class="why-desc">We run programmes designed by systems thinkers with EMR records, GPS tracking, and real-time dashboards. Your CSR audit will have data, not just narratives. We can provide third-party audit-ready documentation on request.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏷️</div>
+        <div class="why-title">Brand Visibility Options</div>
+        <div class="why-desc">Named programme sponsorship, van branding, co-branded outreach materials, social media coverage, and Give.do campaign visibility — tailored to your brand's CSR communication goals and annual report needs.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <div class="why-title">Founded by Corporate Professionals</div>
+        <div class="why-desc">Gaurav Choudhari (IBM, 16+ yrs) and Anurag Choudhari (Tech entrepreneur, 15+ yrs) built this foundation. We understand corporate timelines, compliance pressure, and what it takes to close a CSR partnership efficiently.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT FUNDS ENABLE -->
+<section class="section" style="background:var(--gray-50);">
+  <div class="section-inner">
+    <div class="section-label">Where Funds Go</div>
+    <h2 class="section-h">Your money, on the ground.</h2>
+    <p class="section-sub">We don't believe in vague "operational costs." Here is exactly what your CSR contribution enables, broken down by programme.</p>
+    <div class="use-grid">
+      <div class="use-card">
+        <div class="use-icon">🚐</div>
+        <div>
+          <div class="use-title">Mobile OPD Van — Full Sponsorship</div>
+          <div class="use-desc">₹66.9 Lakhs funds one van for Year 1 — CapEx + 12 months of operations. That's 52 villages/month, ~350 patients/week, free medicines and diagnostics. Includes your brand on the van.</div>
+        </div>
+      </div>
+      <div class="use-card">
+        <div class="use-icon">👨‍⚕️</div>
+        <div>
+          <div class="use-title">Medical Staff — Monthly Operations</div>
+          <div class="use-desc">₹2.4 Lakhs/month sustains one full van team: MBBS doctor, nurse, pharmacist, driver, and programme coordinator for 26 operating days.</div>
+        </div>
+      </div>
+      <div class="use-card">
+        <div class="use-icon">💊</div>
+        <div>
+          <div class="use-title">Medicines &amp; Diagnostics</div>
+          <div class="use-desc">₹50,000/month keeps the pharmacy stocked and point-of-care kits (BP, blood sugar, hemoglobin, ECG) running — ensuring no patient leaves without care due to stock-outs.</div>
+        </div>
+      </div>
+      <div class="use-card">
+        <div class="use-icon">🩸</div>
+        <div>
+          <div class="use-title">BloodConnect Network — National Rollout</div>
+          <div class="use-desc">Fund the technology platform, coordinator network, and community outreach that powers voluntary blood donor matching across India. Zero cost passed to patients.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sched-box">
+      <div class="sched-title">Schedule VII(i) — Companies Act, 2013</div>
+      <div class="sched-desc">All programmes qualify under Schedule VII, Item (i): <em>"Eradicating hunger, poverty and malnutrition, promoting health care including preventive health care and sanitation including contribution to the Swach Bharat Kosh set-up by the Central Government for the promotion of sanitation."</em></div>
+      <div class="sched-ref">Ref: Companies Act 2013, Section 135 &amp; Schedule VII(i) · CSR-2 compliant</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="section" id="tiers" style="background:white;">
+  <div class="section-inner">
+    <div class="section-label">Partnership Tiers</div>
+    <h2 class="section-h">Find the right level of engagement.</h2>
+    <p class="section-sub">Every partnership tier includes 80G documentation, impact reports, and a dedicated point of contact. Choose the level that fits your CSR budget and visibility goals.</p>
+    <div class="tiers-grid">
+
+      <div class="tier-card">
+        <div class="tier-top">
+          <div class="tier-badge bronze">Community Partner</div>
+          <div class="tier-name">Supporter</div>
+          <div class="tier-amount">Starting at <strong>₹5 Lakhs</strong> / year</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-feature"><span class="tier-check">✓</span> 80G certificate &amp; fund utilisation report</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Quarterly impact reports</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Acknowledgement in annual report</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Logo on Foundation website</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Social media mention</div>
+          <a href="#enquire" class="tier-cta">Enquire Now</a>
+        </div>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="tier-top">
+          <div class="tier-featured-label">★ Most Popular</div>
+          <div class="tier-badge gold">Programme Partner</div>
+          <div class="tier-name">Sponsor</div>
+          <div class="tier-amount">Starting at <strong>₹25 Lakhs</strong> / year</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-feature"><span class="tier-check">✓</span> Everything in Supporter</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Named programme sponsorship</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Monthly impact reports with field data</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Co-branding on outreach materials</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Van branding (Dr. GharoGhari)</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Field visit opportunity for your team</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Give.do campaign co-branding</div>
+          <a href="#enquire" class="tier-cta">Enquire Now</a>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-top">
+          <div class="tier-badge platinum">Strategic Partner</div>
+          <div class="tier-name">Principal</div>
+          <div class="tier-amount">Starting at <strong>₹65 Lakhs</strong> / year</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-feature"><span class="tier-check">✓</span> Everything in Sponsor</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Full van ownership &amp; naming rights</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Exclusive district-level association</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Third-party impact audit included</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Seat on Programme Advisory Board</div>
+          <div class="tier-feature"><span class="tier-check">✓</span> Custom impact report for your board</div>
+          <a href="#enquire" class="tier-cta">Enquire Now</a>
+        </div>
+      </div>
+
+    </div>
+    <p style="margin-top:20px; font-size:13px; color:var(--gray-400); text-align:center;">All amounts are indicative. Custom structures available — we work around your CSR calendar and reporting cycle.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--gray-50);">
+  <div class="section-inner" style="max-width:760px;">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-h">What your CSR team will ask.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is the 80G certification final or provisional? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">It is currently provisional, approved by the Income Tax Department on 18 June 2025 with reference number AAMCC7204MF20251. The provisional certification is valid through Assessment Year 2028–2029. Provisional 80G is legally valid for tax deduction purposes — your donors receive 50% deduction on contributions during this period. We are in the process of completing the permanent approval process.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does this qualify under Schedule VII of the Companies Act? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes, unambiguously. Both programmes — Dr. GharoGhari (mobile OPD) and BloodConnect (voluntary blood access) — fall squarely under Schedule VII(i): preventive and primary healthcare. We can provide a legal opinion letter on request for your Board's comfort.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What documentation will we receive for our CSR-2 filing? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">You will receive: (1) 80G receipt with all required details, (2) Fund Utilisation Certificate, (3) Audited statement of accounts on request, (4) Monthly/quarterly impact reports with field data, (5) NGO Darpan registration details, and (6) CIN and PAN for MCA filing. We understand the CSR-2 requirements and ensure all supporting documents are ready well before your filing deadline.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you have FCRA registration for international contributions? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Not yet. FCRA registration is planned as a subsequent step. Currently, we can only accept domestic contributions. If your CSR funds flow from an Indian entity, you are fully covered under our existing registrations.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can we do a site visit before committing? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Absolutely — and we actively encourage it. Field visits can be arranged for your CSR team or leadership. Seeing the actual programme operations firsthand is often the most compelling case for your internal committee.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the minimum contribution amount? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">There is no strict minimum. We have structured tiers starting at ₹5 Lakhs for annual partnerships, but we are happy to discuss contributions of any size and structure a meaningful engagement around your CSR budget.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="enquire" class="form-section">
+  <div class="form-wrap">
+    <div>
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-h">Let's start a conversation.</h2>
+      <p class="section-sub">Share your details and we'll reach back within 48 hours — with a programme brief, impact projections, and a proposal aligned to your CSR budget and goals.</p>
+
+      <div style="margin-top:36px;">
+        <ul class="check-list">
+          <li>
+            <div class="check-icon">✓</div>
+            <div><strong>48-hour response commitment</strong> We respond to every CSR enquiry within two business days.</div>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <div><strong>Custom proposal prepared</strong> We'll send a structured CSR impact proposal tailored to your sector, budget, and reporting needs — ready for your internal committee.</div>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <div><strong>No pressure, no spam</strong> One follow-up only. We respect your time.</div>
+          </li>
+        </ul>
+        <div style="margin-top:28px; padding:20px 24px; background:var(--blue-light); border-radius:var(--radius-md); border-left:3px solid var(--blue);">
+          <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); margin-bottom:6px;">Direct Contact</div>
+          <div style="font-size:15px; color:var(--navy);">📧 <a href="mailto:contact@choudhari.ngo" style="color:var(--blue); font-weight:600; text-decoration:none;">contact@choudhari.ngo</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card" id="form-container">
+      <div class="form-card-title">CSR Partnership Enquiry</div>
+      <div class="form-card-sub">Fill in the form and we'll reach back within 48 hours with a tailored proposal.</div>
+
+      <form action="https://formspree.io/f/xwvajwyn" method="POST" id="csr-form">
+        <input type="hidden" name="form_source" value="CSR Partnership Page">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Your Name *</label>
+            <input class="form-input" type="text" name="name" required placeholder="Full name">
+          </div>
+          <div class="form-field">
+            <label class="form-label">Designation</label>
+            <input class="form-input" type="text" name="designation" placeholder="e.g. CSR Head, CFO">
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Organisation *</label>
+          <input class="form-input" type="text" name="organisation" required placeholder="Company name">
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Work Email *</label>
+            <input class="form-input" type="email" name="email" required placeholder="name@company.com">
+          </div>
+          <div class="form-field">
+            <label class="form-label">Phone</label>
+            <input class="form-input" type="tel" name="phone" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Annual CSR Budget (approximate)</label>
+          <select class="form-select" name="budget">
+            <option value="" disabled selected>Select a range</option>
+            <option>Under ₹5 Lakhs</option>
+            <option>₹5–25 Lakhs</option>
+            <option>₹25–65 Lakhs</option>
+            <option>₹65 Lakhs – ₹1 Crore</option>
+            <option>Above ₹1 Crore</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Programme Interest</label>
+          <select class="form-select" name="programme">
+            <option value="" disabled selected>Which programme interests you?</option>
+            <option>Dr. GharoGhari — Mobile OPD</option>
+            <option>BloodConnect — National Donor Network</option>
+            <option>Both programmes</option>
+            <option>General organisational support</option>
+            <option>Not sure — need more information</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Message</label>
+          <textarea class="form-input textarea" name="message" placeholder="Tell us about your CSR goals, timeline, or any specific requirements..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Enquiry →</button>
+        <div class="form-note">We respond within 48 business hours. Your details will not be shared with anyone.</div>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <div class="form-success-icon">✅</div>
+        <div class="form-success-title">Enquiry Received!</div>
+        <div class="form-success-desc">Thank you for reaching out. We'll review your enquiry and get back to you within 48 business hours with a tailored proposal.<br><br>In the meantime, feel free to email us directly at <a href="mailto:contact@choudhari.ngo" style="color:var(--blue);">contact@choudhari.ngo</a>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Choudhari <span>EduHealth</span><br>India Foundation</div>
+        <div class="footer-desc">A Section 8 Non-Profit delivering mobile healthcare and national blood access programmes across rural India since 2025.</div>
+        <div class="footer-reg">CIN: U88900MH2025NPL447942 · PAN: AAMCC7204M<br>NGO Darpan: MH/2025/0643345 · Sec 8 Lic: 168397<br>12A &amp; 80G: AAMCC7204MF20251</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Programmes</div>
+        <ul class="footer-col-links">
+          <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
+          <li><a href="bloodconnect.html">BloodConnect</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Organisation</div>
+        <ul class="footer-col-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#credentials">Credentials</a></li>
+          <li><a href="csr-partnership.html">CSR Partnership</a></li>
+          <li><a href="donate.html" style="color:var(--red);font-weight:600;">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="mailto:contact@choudhari.ngo">contact@choudhari.ngo</a></li>
+          <li><a href="https://choudhari.ngo">choudhari.ngo</a></li>
+          <li><a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank">Give.do ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Choudhari EduHealth India Foundation. All rights reserved.</div>
+      <div class="footer-80g">80G Certified · CSR Eligible · Schedule VII (i)</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Formspree AJAX submit
+  const form = document.getElementById('csr-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else { btn.textContent = 'Error — please email us directly'; }
+      } catch { btn.textContent = 'Error — please email us directly'; }
+    });
+  }
+</script>
+</body>
+</html>

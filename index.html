@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choudhari EduHealth India Foundation | Healthcare for Rural India</title>
+<meta name="description" content="A Section 8 NGO delivering mobile healthcare and voluntary blood access programmes across rural India. CSR-eligible under 80G. Partner with us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1929;
+    --navy-mid: #162840;
+    --blue: #0055CC;
+    --blue-light: #EEF3FB;
+    --blue-mid: #4D9EFF;
+    --red: #CC2200;
+    --red-light: #FEF0EE;
+    --gray-50: #F4F6F9;
+    --gray-100: #DDE3EC;
+    --gray-400: #8A9BB0;
+    --gray-600: #4A5B6E;
+    --white: #FFFFFF;
+    --text-primary: #0B1929;
+    --text-secondary: #4A5B6E;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Instrument Sans', sans-serif;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-card: 0 1px 3px rgba(11,25,41,0.08), 0 4px 16px rgba(11,25,41,0.06);
+    --transition: 0.2s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--gray-50);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    text-decoration: none;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .nav-logo span { color: var(--blue); }
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13.5px;
+    color: var(--gray-600);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+  }
+  .nav-links a:hover { background: var(--gray-50); color: var(--navy); }
+  .nav-cta {
+    background: var(--blue);
+    color: white !important;
+    padding: 10px 22px !important;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 13.5px;
+    text-decoration: none;
+    transition: var(--transition);
+    flex-shrink: 0;
+  }
+  .nav-cta:hover { background: #0044aa; }
+  .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .nav-hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: white;
+    border-bottom: 1px solid var(--gray-100);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--blue) 1px, transparent 1px),
+      linear-gradient(90deg, var(--blue) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.03;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 32px 72px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 20px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--blue);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--navy);
+    margin-bottom: 22px;
+  }
+  .hero h1 span { color: var(--blue); }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 36px;
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--blue);
+    color: white;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #0044aa; }
+  .btn-outline {
+    background: white;
+    border: 1.5px solid var(--gray-100);
+    color: var(--navy);
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gray-400); }
+  .hero-card {
+    background: var(--navy);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card-circle1 {
+    position: absolute;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(0,85,204,0.25);
+    top: -60px; right: -60px;
+  }
+  .hero-card-circle2 {
+    position: absolute;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(0,85,204,0.15);
+    top: 20px; right: 20px;
+  }
+  .hero-card-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero-card-stat { margin-bottom: 20px; position: relative; }
+  .hero-card-stat-n {
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+  }
+  .hero-card-stat-l {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 4px;
+  }
+  .hero-card-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 20px 0;
+    position: relative;
+  }
+  .hero-card-row {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  .hero-card-mini-n {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+  }
+  .hero-card-mini-l {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 2px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,85,204,0.2);
+    border: 1px solid rgba(77,158,255,0.3);
+    color: var(--blue-mid);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 100px;
+    margin-top: 24px;
+    position: relative;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #22cc88;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--navy-mid);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .stats-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+  }
+  .stat-item {
+    flex: 1;
+    padding: 24px 32px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-n {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--blue-mid);
+    line-height: 1;
+  }
+  .stat-l {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: rgba(255,255,255,0.4);
+    margin-top: 5px;
+  }
+
+  /* ─── SECTION SHARED ─── */
+  .section { padding: 80px 0; }
+  .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 20px; height: 2px; background: var(--blue); }
+  .section-h {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.15;
+  }
+  .section-sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ─── MISSION ─── */
+  .mission { background: white; }
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .mission-quote {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--navy);
+    border-left: 3px solid var(--blue);
+    padding-left: 24px;
+    margin: 32px 0;
+  }
+  .mission-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .mission-visual {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+  }
+  .mission-visual-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .mission-visual-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .mission-visual-item:first-child { padding-top: 0; }
+  .mission-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: var(--blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .mission-icon.red { background: var(--red-light); }
+  .mission-item-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .mission-item-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ─── FOUNDERS ─── */
+  .founders { background: var(--gray-50); }
+  .founders-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .founder-card {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-card);
+  }
+  .founder-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--blue-mid);
+    margin-bottom: 20px;
+  }
+  .founder-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .founder-role {
+    font-size: 13px;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .founder-bio {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .founder-tag {
+    display: inline-block;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* ─── PROGRAMMES ─── */
+  .programmes { background: white; }
+  .programmes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 48px;
+  }
+  .prog-card {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+  }
+  .prog-card:hover { box-shadow: 0 4px 24px rgba(11,25,41,0.12); transform: translateY(-2px); }
+  .prog-card-top {
+    height: 6px;
+    background: var(--blue);
+  }
+  .prog-card-top.red { background: var(--red); }
+  .prog-card-body { padding: 32px; }
+  .prog-type {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .prog-type.red { color: var(--red); }
+  .prog-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .prog-tagline {
+    font-size: 14px;
+    color: var(--blue);
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  .prog-tagline.red { color: var(--red); }
+  .prog-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+  .prog-details {
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .prog-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 13px;
+  }
+  .prog-detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .prog-detail-row:first-child { padding-top: 0; }
+  .prog-detail-key { color: var(--gray-600); }
+  .prog-detail-val { font-weight: 600; color: var(--navy); text-align: right; }
+  .prog-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+  .prog-pill {
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+  .prog-pill.red { background: var(--red-light); color: var(--red); }
+  .prog-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .prog-link.red { color: var(--red); }
+  .prog-link-arrow {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+  .prog-link-arrow.red { background: var(--red-light); }
+  .prog-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+  .prog-status.upcoming { background: #FFF8E7; color: #916500; }
+  .prog-status.active { background: #E8F7EE; color: #1A7A40; }
+  .prog-status::before { content:''; width:6px;height:6px; border-radius:50%; }
+  .prog-status.upcoming::before { background: #F5A623; }
+  .prog-status.active::before { background: #22cc66; animation: pulse 2s infinite; }
+
+  /* ─── CREDENTIALS ─── */
+  .credentials { background: var(--navy); }
+  .credentials .section-label { color: var(--blue-mid); }
+  .credentials .section-label::before { background: var(--blue-mid); }
+  .credentials .section-h { color: white; }
+  .credentials .section-sub { color: rgba(255,255,255,0.55); max-width: 640px; }
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .cred-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: 24px;
+  }
+  .cred-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,85,204,0.25);
+    color: var(--blue-mid);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  .cred-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+  .cred-value {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: var(--blue-mid);
+    word-break: break-all;
+    margin-bottom: 6px;
+  }
+  .cred-note { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .cred-full {
+    grid-column: 1 / -1;
+    background: rgba(0,85,204,0.1);
+    border: 1px solid rgba(0,85,204,0.25);
+    border-radius: var(--radius-md);
+    padding: 24px 32px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 4px;
+  }
+  .cred-full-item { }
+  .cred-full-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .cred-full-val { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: white; }
+  .cred-note-bar {
+    margin-top: 20px;
+    padding: 14px 20px;
+    background: rgba(255,165,0,0.08);
+    border: 1px solid rgba(255,165,0,0.2);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: rgba(255,200,80,0.85);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* ─── TEAM ─── */
+  .team { background: var(--gray-50); }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .team-card {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 28px 20px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+  }
+  .team-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--gray-50);
+    border: 2px solid var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 0 auto 14px;
+  }
+  .team-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .team-role {
+    font-size: 12px;
+    color: var(--gray-400);
+    margin-bottom: 10px;
+  }
+  .team-tag {
+    display: inline-block;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── CSR SECTION ─── */
+  .csr { background: white; }
+  .csr-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 32px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: start;
+  }
+  .csr-why-list { margin: 24px 0 0; }
+  .csr-why-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .csr-why-item:last-child { border-bottom: none; }
+  .csr-check {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    color: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-weight: 700;
+  }
+  .csr-why-title { font-weight: 600; font-size: 15px; color: var(--navy); margin-bottom: 2px; }
+  .csr-why-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .csr-contact {
+    background: var(--navy);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    color: white;
+  }
+  .csr-contact-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .csr-contact-sub { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 28px; line-height: 1.6; }
+  .csr-field { margin-bottom: 14px; }
+  .csr-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); margin-bottom: 6px; display: block; }
+  .csr-input {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    padding: 11px 14px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition);
+  }
+  .csr-input:focus { border-color: var(--blue-mid); }
+  .csr-input::placeholder { color: rgba(255,255,255,0.3); }
+  .csr-input.textarea { resize: none; height: 80px; }
+  .csr-submit {
+    width: 100%;
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: var(--transition);
+  }
+  .csr-submit:hover { background: #0044aa; }
+  .csr-contact-details { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .csr-contact-line { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+  .csr-contact-line a { color: var(--blue-mid); text-decoration: none; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 48px 0 32px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .footer-logo span { color: var(--blue-mid); }
+  .footer-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 16px; }
+  .footer-reg {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.8;
+    font-family: 'Courier New', monospace;
+  }
+  .footer-col-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+  .footer-col-links { list-style: none; }
+  .footer-col-links li { margin-bottom: 10px; }
+  .footer-col-links a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: var(--transition); }
+  .footer-col-links a:hover { color: rgba(255,255,255,0.8); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+  .footer-copy a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-80g {
+    font-size: 12px;
+    color: rgba(77,158,255,0.7);
+    background: rgba(0,85,204,0.15);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .hero h1 { font-size: 38px; }
+    .mission-grid { grid-template-columns: 1fr; }
+    .founders-grid { grid-template-columns: 1fr; }
+    .programmes-grid { grid-template-columns: 1fr; }
+    .cred-grid { grid-template-columns: 1fr 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .csr-inner { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .stats-bar-inner { flex-wrap: wrap; }
+    .stat-item { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 30px; }
+    .section-h { font-size: 26px; }
+    .cred-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .cred-full { flex-direction: column; gap: 20px; }
+    .section { padding: 56px 0; }
+    .hero-inner { padding: 48px 20px; }
+    .section-inner { padding: 0 20px; }
+  }
+</style>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Choudhari <span>EduHealth</span><br>India Foundation</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
+      <li><a href="bloodconnect.html">BloodConnect</a></li>
+      <li><a href="donate.html" style="color:var(--red); font-weight:600;">Donate</a></li>
+      <li><a href="csr-partnership.html" class="nav-cta">CSR Partnership</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Section 8 NGO — India</div>
+      <h1>Healthcare that reaches <span>where roads end.</span></h1>
+      <p class="hero-sub">We design and operate mobile health infrastructure and national voluntary blood networks for India's most underserved rural populations — bringing qualified doctors, diagnostics, and medicines directly to the doorstep.</p>
+      <div class="hero-btns">
+        <a href="csr-partnership.html" class="btn-primary">Explore CSR Partnership →</a>
+        <a href="#programmes" class="btn-outline">Our Programmes</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-circle1"></div>
+      <div class="hero-card-circle2"></div>
+      <div class="hero-card-label">Programme Reach — Phase 1 Pilot</div>
+      <div class="hero-card-stat">
+        <div class="hero-card-stat-n">52+</div>
+        <div class="hero-card-stat-l">Villages served per month (Phase 1)</div>
+      </div>
+      <div class="hero-card-divider"></div>
+      <div class="hero-card-row">
+        <div>
+          <div class="hero-card-mini-n">350</div>
+          <div class="hero-card-mini-l">Patients / week</div>
+        </div>
+        <div>
+          <div class="hero-card-mini-n">National</div>
+          <div class="hero-card-mini-l">BloodConnect</div>
+        </div>
+        <div>
+          <div class="hero-card-mini-n">∞</div>
+          <div class="hero-card-mini-l">Scalable model</div>
+        </div>
+      </div>
+      <div class="hero-badge">Phase 1 Pilot Launching 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS BAR ─── -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-n">52+</div>
+      <div class="stat-l">Villages / month (Phase 1)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">350</div>
+      <div class="stat-l">Patients / week</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">2</div>
+      <div class="stat-l">Flagship programmes</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">National</div>
+      <div class="stat-l">BloodConnect Scope</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">80G</div>
+      <div class="stat-l">Tax-exempt donations</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ABOUT / MISSION ─── -->
+<section class="section mission" id="about">
+  <div class="section-inner">
+    <div class="mission-grid">
+      <div>
+        <div class="section-label">Our Mission</div>
+        <h2 class="section-h">Born from a gap that<br>metro India never sees.</h2>
+        <div class="mission-quote">"We built Choudhari EduHealth because the healthcare gap in rural India is invisible to those who live in cities — and that invisibility is the problem."</div>
+        <p class="mission-text">Established in May 2025, Choudhari EduHealth India Foundation was founded by two professionals rooted in technology and management who grew up witnessing the stark difference in healthcare access between urban and rural India.</p>
+        <p class="mission-text">Hundreds of millions of Indians live in villages where a qualified doctor visits once a month — if at all. Emergency blood needs go unmet because voluntary donor networks don't exist at scale. We are building the infrastructure to change that: starting on the ground, with measurable outcomes, and expanding across the country.</p>
+      </div>
+      <div class="mission-visual">
+        <div class="mission-visual-item">
+          <div class="mission-icon">🏥</div>
+          <div>
+            <div class="mission-item-title">Dr. GharoGhari — Mobile OPD</div>
+            <div class="mission-item-desc">A dual-shift mobile clinic van delivering free consultations, diagnostics and medicines to underserved villages — starting its pilot in rural India and scaling district by district.</div>
+          </div>
+        </div>
+        <div class="mission-visual-item">
+          <div class="mission-icon red">🩸</div>
+          <div>
+            <div class="mission-item-title">BloodConnect — National Donor Network</div>
+            <div class="mission-item-desc">A nationwide voluntary blood donor coordination network connecting willing donors to patients in critical need — eliminating dangerous delays caused by the absence of organised blood access in rural areas.</div>
+          </div>
+        </div>
+        <div class="mission-visual-item">
+          <div class="mission-icon">📚</div>
+          <div>
+            <div class="mission-item-title">EduHealth Awareness</div>
+            <div class="mission-item-desc">Community health literacy campaigns, school health checkups, and preventive care sessions delivered alongside our mobile OPD operations.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOUNDERS ─── -->
+<section class="section founders">
+  <div class="section-inner">
+    <div class="section-label">Leadership</div>
+    <h2 class="section-h">Founded by practitioners,<br>not just philanthropists.</h2>
+    <p class="section-sub">Our founders bring 30+ combined years of professional experience in technology and enterprise management — which directly informs how we build systems, measure impact, and design programmes that scale.</p>
+    <div class="founders-grid">
+      <div class="founder-card">
+        <div class="founder-avatar">GC</div>
+        <div class="founder-name">Gaurav Choudhari</div>
+        <div class="founder-role">Co-Founder &amp; Managing Trustee</div>
+        <div class="founder-bio">A Senior Managing Consultant at IBM India Pvt. Ltd. in Delhi, Gaurav brings 16+ years of enterprise-level systems thinking, programme design, and stakeholder management to the foundation's operations. His corporate expertise directly shapes how we structure accountability, reporting, and CSR engagement.</div>
+        <div>
+          <span class="founder-tag">IBM India</span>
+          <span class="founder-tag">Senior Managing Consultant</span>
+          <span class="founder-tag">Delhi</span>
+          <span class="founder-tag">16+ Years</span>
+        </div>
+      </div>
+      <div class="founder-card">
+        <div class="founder-avatar">AC</div>
+        <div class="founder-name">Anurag Choudhari</div>
+        <div class="founder-role">Co-Founder &amp; Trustee</div>
+        <div class="founder-bio">Founder of Geekenized Technology LLP in Pune, Anurag brings 15+ years of entrepreneurial experience building technology solutions from the ground up. He leads the foundation's technology infrastructure — from our EMR systems and digital field tools to real-time impact tracking and donor reporting.</div>
+        <div>
+          <span class="founder-tag">Geekenized Technology LLP</span>
+          <span class="founder-tag">Tech Entrepreneur</span>
+          <span class="founder-tag">Pune</span>
+          <span class="founder-tag">15+ Years</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROGRAMMES ─── -->
+<section class="section programmes" id="programmes">
+  <div class="section-inner">
+    <div class="section-label">Our Programmes</div>
+    <h2 class="section-h">Two initiatives. One mission.</h2>
+    <p class="section-sub">Each programme is designed with field-tested operational models, measurable KPIs, and full financial transparency — structured for CSR compliance and impact reporting.</p>
+    <div class="programmes-grid">
+
+      <!-- Dr. GharoGhari -->
+      <div class="prog-card">
+        <div class="prog-card-top"></div>
+        <div class="prog-card-body">
+          <div class="prog-status upcoming">Launching — Phase 1 Pilot</div>
+          <div class="prog-type">Mobile Healthcare · Rural India (Expanding)</div>
+          <div class="prog-title">Dr. GharoGhari</div>
+          <div class="prog-tagline">"The doctor who comes home"</div>
+          <div class="prog-desc">A fully-equipped mobile OPD van operating dual shifts — morning and evening — to match the real availability patterns of rural daily-wage workers and farming communities. Every working day, the van covers two villages, delivering free consultations, point-of-care diagnostics, and dispensed medicines to populations far from district hospitals. The model is built to replicate: one pilot van establishes the operational playbook, and each additional van extends coverage to a new district.</div>
+
+          <div class="prog-details">
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Coverage Model</span>
+              <span class="prog-detail-val">Pilot → District → State → National</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Villages / Month (Per Van)</span>
+              <span class="prog-detail-val">52 villages (26 working days × 2)</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Patients / Week (Per Van)</span>
+              <span class="prog-detail-val">280–350 patients</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">OPD Hours</span>
+              <span class="prog-detail-val">9–12 AM + 6–9 PM (rural-optimised)</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Staff Per Van</span>
+              <span class="prog-detail-val">MBBS Doctor, Nurse, Pharmacist, Driver, Coordinator</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Year-1 Budget (CapEx + OpEx)</span>
+              <span class="prog-detail-val">₹66.9 Lakhs per van</span>
+            </div>
+          </div>
+
+          <div class="prog-pills">
+            <div class="prog-pill">Free Consultations</div>
+            <div class="prog-pill">BP / Sugar / ECG / Hemoglobin</div>
+            <div class="prog-pill">Free Medicines</div>
+            <div class="prog-pill">ASHA Worker Integration</div>
+            <div class="prog-pill">EMR &amp; Digital Records</div>
+            <div class="prog-pill">Replicable District Model</div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:4px;">
+          <a href="dr-gharoghari.html" class="prog-link">Full Programme Details <div class="prog-link-arrow">→</div></a>
+          <a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; background:var(--blue); color:white; font-size:13px; font-weight:600; padding:9px 16px; border-radius:6px; text-decoration:none;">Donate ↗</a>
+        </div>
+        </div>
+      </div>
+
+      <!-- BloodConnect -->
+      <div class="prog-card">
+        <div class="prog-card-top red"></div>
+        <div class="prog-card-body">
+          <div class="prog-status active">Active Programme</div>
+          <div class="prog-type red">Blood Access · National Programme</div>
+          <div class="prog-title">BloodConnect</div>
+          <div class="prog-tagline red">"No patient should wait for blood."</div>
+          <div class="prog-desc">A technology-enabled voluntary donor coordination network designed to eliminate emergency blood shortages across India. BloodConnect connects willing voluntary donors to patients in critical need — building a live, community-powered blood access layer that reduces dangerous dependency on commercial blood banks and cuts life-threatening delays in areas where organised blood storage infrastructure is absent or unreliable. The programme is designed for national scale from day one, with simultaneous rollout across multiple locations.</div>
+
+          <div class="prog-details">
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Programme Scope</span>
+              <span class="prog-detail-val">National — Pan-India Rollout</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Model</span>
+              <span class="prog-detail-val">Voluntary Donor Coordination Network</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Coordination</span>
+              <span class="prog-detail-val">Real-time donor-patient matching</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Donor Commitment</span>
+              <span class="prog-detail-val">100% Voluntary — Zero commercial dependency</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Integration</span>
+              <span class="prog-detail-val">District hospitals, PHCs, community networks</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Cost to Patient</span>
+              <span class="prog-detail-val">Zero</span>
+            </div>
+          </div>
+
+          <div class="prog-pills">
+            <div class="prog-pill red">Pan-India Network</div>
+            <div class="prog-pill red">Voluntary Donors</div>
+            <div class="prog-pill red">Real-time Coordination</div>
+            <div class="prog-pill red">Hospital Integration</div>
+            <div class="prog-pill red">Community-led</div>
+            <div class="prog-pill red">Zero Cost to Patient</div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:4px;">
+          <a href="bloodconnect.html" class="prog-link red">Full Programme Details <div class="prog-link-arrow red">→</div></a>
+          <a href="donate.html#direct-transfer" style="display:inline-flex; align-items:center; gap:6px; background:var(--red); color:white; font-size:13px; font-weight:600; padding:9px 16px; border-radius:6px; text-decoration:none;">Donate →</a>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CREDENTIALS ─── -->
+<section class="section credentials" id="credentials">
+  <div class="section-inner">
+    <div class="section-label">Legal &amp; Regulatory</div>
+    <h2 class="section-h">Full transparency.<br>Verified credentials.</h2>
+    <p class="section-sub">Choudhari EduHealth India Foundation is a registered Section 8 Company under the Companies Act, 2013 — holding provisional 12A and 80G certifications, making all domestic CSR contributions fully tax-compliant across India.</p>
+
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-badge">Registration</div>
+        <div class="cred-title">Corporate Identity Number</div>
+        <div class="cred-value">U88900MH2025NPL447942</div>
+        <div class="cred-note">Ministry of Corporate Affairs, India</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-badge">Tax Identity</div>
+        <div class="cred-title">PAN Number</div>
+        <div class="cred-value">AAMCC7204M</div>
+        <div class="cred-note">Income Tax Department, India</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-badge">Section 8</div>
+        <div class="cred-title">Section 8 Licence</div>
+        <div class="cred-value">168397</div>
+        <div class="cred-note">Non-profit status under Companies Act, 2013</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-badge">NGO Darpan</div>
+        <div class="cred-title">Unique ID — NITI Aayog</div>
+        <div class="cred-value">MH/2025/0643345</div>
+        <div class="cred-note">Registered on NGO Darpan Portal</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-badge">Tax Exemption</div>
+        <div class="cred-title">12A &amp; 80G Provisional Number</div>
+        <div class="cred-value">AAMCC7204MF20251</div>
+        <div class="cred-note">Provisional approval dated 18 June 2025</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-badge">Established</div>
+        <div class="cred-title">Date of Incorporation</div>
+        <div class="cred-value">9th May 2025</div>
+        <div class="cred-note">Registered in Maharashtra, India</div>
+      </div>
+
+      <div class="cred-full">
+        <div class="cred-full-item">
+          <div class="cred-full-label">80G Valid Through</div>
+          <div class="cred-full-val">AY 2028–2029</div>
+        </div>
+        <div class="cred-full-item">
+          <div class="cred-full-label">12A Valid Through</div>
+          <div class="cred-full-val">AY 2028–2029</div>
+        </div>
+        <div class="cred-full-item">
+          <div class="cred-full-label">Donor Benefit</div>
+          <div class="cred-full-val">50% Tax Deduction on Donations</div>
+        </div>
+        <div class="cred-full-item">
+          <div class="cred-full-label">FCRA Status</div>
+          <div class="cred-full-val">Application Planned</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cred-note-bar">
+      ⚠ &nbsp;Our 12A and 80G certifications are currently provisional (valid through AY 2028–2029). All domestic donations are eligible for 50% tax deduction under Section 80G. FCRA registration for international funds is planned as a subsequent step.
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM ─── -->
+<section class="section team" id="team">
+  <div class="section-inner">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-h">People who make it happen.</h2>
+    <p class="section-sub">Our core team combines medical expertise, legal rigour, and ground-level community relationships — all essential to delivering credible, sustainable health outcomes.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">GC</div>
+        <div class="team-name">Gaurav Choudhari</div>
+        <div class="team-role">Co-Founder &amp; Managing Trustee</div>
+        <span class="team-tag">Leadership</span>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">AC</div>
+        <div class="team-name">Anurag Choudhari</div>
+        <div class="team-role">Co-Founder &amp; Trustee</div>
+        <span class="team-tag">Leadership</span>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: #EEF3FB; color: var(--blue);">MA</div>
+        <div class="team-name">Dr. Shrikant Futane</div>
+        <div class="team-role">Medical Advisor</div>
+        <span class="team-tag" style="background:#E8F7EE; color:#1A7A40;">Medical</span>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: #EEF3FB; color: var(--blue);">LA</div>
+        <div class="team-name">Medico Legal Services LLP</div>
+        <div class="team-role">Legal Advisor</div>
+        <span class="team-tag" style="background:#FFF8E7; color:#916500;">Legal</span>
+      </div>
+    </div>
+    <p style="margin-top: 24px; font-size: 13px; color: var(--gray-400); text-align: center;">Our volunteer network is growing. Interested in contributing your skills? <a href="#csr" style="color: var(--blue); text-decoration: none; font-weight: 600;">Get in touch →</a></p>
+  </div>
+</section>
+
+
+<!-- ─── DONATE SECTION ─── -->
+<section class="section" id="donate" style="background:var(--navy);">
+  <div class="section-inner">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; margin-bottom:44px;">
+      <div>
+        <div class="section-label" style="color:var(--blue-mid);"><span style="display:block;width:20px;height:2px;background:var(--blue-mid);"></span>Individual Donations</div>
+        <h2 class="section-h" style="color:white; margin-bottom:8px;">Support our work directly.</h2>
+        <p style="font-size:16px; color:rgba(255,255,255,0.55); max-width:500px; line-height:1.7;">Donate to either programme via Give.do, UPI, or bank transfer. 80G tax benefit on all contributions.</p>
+      </div>
+      <a href="donate.html" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:rgba(255,255,255,0.75); font-size:14px; font-weight:600; padding:12px 22px; border-radius:6px; text-decoration:none; white-space:nowrap; transition:0.2s ease;">View All Donation Options →</a>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px;">
+
+      <!-- Dr. GharoGhari donate card -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;">
+        <div style="height:4px; background:var(--blue);"></div>
+        <div style="padding:28px;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:12px;">Mobile OPD · Give.do Live</div>
+          <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:white; margin-bottom:6px;">Dr. GharoGhari</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65; margin-bottom:20px;">₹500 covers one full OPD consultation with medicines. ₹25,000 funds an entire day of operations — two villages, 50+ patients.</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹500</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹2,000</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹5,000</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹25,000</span>
+          </div>
+          <a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:8px; background:var(--blue); color:white; padding:13px; border-radius:6px; font-size:14px; font-weight:600; text-decoration:none;">Donate via Give.do ↗</a>
+        </div>
+      </div>
+
+      <!-- BloodConnect donate card -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;">
+        <div style="height:4px; background:var(--red);"></div>
+        <div style="padding:28px;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#F08080; margin-bottom:12px;">National Blood Network · Give.do Coming Soon</div>
+          <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:white; margin-bottom:6px;">BloodConnect</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65; margin-bottom:20px;">Fund the technology platform and coordinator network that connects voluntary blood donors to patients in critical need — at zero cost to the patient, anywhere in India.</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹1,000</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹5,000</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹10,000</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹50,000</span>
+          </div>
+          <a href="donate.html#direct-transfer" style="display:flex; align-items:center; justify-content:center; gap:8px; background:var(--red); color:white; padding:13px; border-radius:6px; font-size:14px; font-weight:600; text-decoration:none;">Donate via Bank Transfer ↓</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- bank details strip -->
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:20px 28px; display:flex; flex-wrap:wrap; gap:32px; align-items:center;">
+      <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.35);">Direct Bank Transfer</div>
+      <div><div style="font-size:11px; color:rgba(255,255,255,0.35); margin-bottom:3px;">Account</div><div style="font-family:Courier New,monospace; font-size:13px; color:white; font-weight:600;">Choudhari EduHealth India Foundation</div></div>
+      <div><div style="font-size:11px; color:rgba(255,255,255,0.35); margin-bottom:3px;">Account No.</div><div style="font-family:Courier New,monospace; font-size:13px; color:var(--blue-mid); font-weight:600;">925010038947028</div></div>
+      <div><div style="font-size:11px; color:rgba(255,255,255,0.35); margin-bottom:3px;">IFSC</div><div style="font-family:Courier New,monospace; font-size:13px; color:var(--blue-mid); font-weight:600;">UTIB0003099</div></div>
+      <div><div style="font-size:11px; color:rgba(255,255,255,0.35); margin-bottom:3px;">Bank</div><div style="font-family:Courier New,monospace; font-size:13px; color:white; font-weight:600;">Axis Bank, Gadge Nagar, Amravati</div></div>
+      <a href="donate.html" style="margin-left:auto; font-size:13px; font-weight:600; color:var(--blue-mid); text-decoration:none; white-space:nowrap;">Full details + 80G info →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CSR SECTION ─── -->
+<section class="csr" id="csr">
+  <div class="csr-inner">
+    <div>
+      <div class="section-label">CSR Partnership</div>
+      <h2 class="section-h">Partner with us.<br>Make it count on paper.</h2>
+      <p class="section-sub" style="margin-bottom: 0;">Your CSR funds, deployed through Choudhari EduHealth, go directly into field operations with full financial transparency, geo-tagged impact reporting, and 80G tax compliance documentation.</p>
+      <div class="csr-why-list">
+        <div class="csr-why-item">
+          <div class="csr-check">✓</div>
+          <div>
+            <div class="csr-why-title">80G Compliant — Immediate Tax Benefit</div>
+            <div class="csr-why-desc">Donations attract 50% income tax deduction under Section 80G. Provisional approval valid through AY 2028–2029. All documentation provided for your CSR compliance filing.</div>
+          </div>
+        </div>
+        <div class="csr-why-item">
+          <div class="csr-check">✓</div>
+          <div>
+            <div class="csr-why-title">Measurable, Reportable Impact</div>
+            <div class="csr-why-desc">Monthly reports with patient counts, village coverage, GPS-tagged service logs, and testimonials — everything your CSR team needs to demonstrate community impact to board and regulators.</div>
+          </div>
+        </div>
+        <div class="csr-why-item">
+          <div class="csr-check">✓</div>
+          <div>
+            <div class="csr-why-title">Healthcare = Schedule VII Alignment</div>
+            <div class="csr-why-desc">Both our programmes directly align with Companies Act Schedule VII (i) — preventive healthcare, promoting health care including preventive health care and sanitation.</div>
+          </div>
+        </div>
+        <div class="csr-why-item">
+          <div class="csr-check">✓</div>
+          <div>
+            <div class="csr-why-title">Branded Partnership Options Available</div>
+            <div class="csr-why-desc">Van branding, programme co-naming, visibility in all outreach materials, social media, and Give.do donor portal — tailored to your brand's CSR communication goals.</div>
+          </div>
+        </div>
+        <div class="csr-why-item">
+          <div class="csr-check">✓</div>
+          <div>
+            <div class="csr-why-title">Founded by Corporate Professionals</div>
+            <div class="csr-why-desc">Our founders come from IBM and enterprise technology — we understand compliance timelines, board reporting, and what a CSR committee actually needs to see.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="csr-contact">
+      <div class="csr-contact-title">Let's Talk CSR</div>
+      <div class="csr-contact-sub">Share your details and we'll reach out within 48 hours with a programme brief and impact proposal tailored to your CSR budget and goals.</div>
+      <div class="csr-field">
+        <label class="csr-label">Your Name</label>
+        <input class="csr-input" type="text" placeholder="Full name">
+      </div>
+      <div class="csr-field">
+        <label class="csr-label">Organisation</label>
+        <input class="csr-input" type="text" placeholder="Company / Organisation name">
+      </div>
+      <div class="csr-field">
+        <label class="csr-label">Email</label>
+        <input class="csr-input" type="email" placeholder="Work email address">
+      </div>
+      <div class="csr-field">
+        <label class="csr-label">Message (optional)</label>
+        <textarea class="csr-input textarea" placeholder="Tell us about your CSR goals or budget range..."></textarea>
+      </div>
+      <button class="csr-submit">Send Enquiry →</button>
+      <div class="csr-contact-details">
+        <div class="csr-contact-line">Email: <a href="mailto:contact@choudhari.ngo">contact@choudhari.ngo</a></div>
+        <div class="csr-contact-line">Web: <a href="https://choudhari.ngo">choudhari.ngo</a></div>
+        <div class="csr-contact-line">Registered: India · Section 8 Non-Profit</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Choudhari <span>EduHealth</span><br>India Foundation</div>
+        <div class="footer-desc">A Section 8 Non-Profit delivering mobile healthcare and national blood access programmes across rural India since 2025. Built by technology professionals with a mission rooted in ground reality.</div>
+        <div class="footer-reg">
+          CIN: U88900MH2025NPL447942<br>
+          PAN: AAMCC7204M<br>
+          NGO Darpan: MH/2025/0643345<br>
+          Section 8 Licence: 168397<br>
+          12A &amp; 80G Ref: AAMCC7204MF20251
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Programmes</div>
+        <ul class="footer-col-links">
+          <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
+          <li><a href="bloodconnect.html">BloodConnect</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="csr-partnership.html">CSR Partnership</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Organisation</div>
+        <ul class="footer-col-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#credentials">Legal &amp; Credentials</a></li>
+          <li><a href="csr-partnership.html">CSR Partnership</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="mailto:contact@choudhari.ngo">contact@choudhari.ngo</a></li>
+          <li><a href="mailto:info@choudhari.ngo">info@choudhari.ngo</a></li>
+          <li><a href="https://choudhari.ngo">choudhari.ngo</a></li>
+          <li><a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank">Give.do ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Choudhari EduHealth India Foundation. All rights reserved. | <a href="#">Privacy Policy</a></div>
+      <div class="footer-80g">80G Certified · CSR Eligible · Schedule VII (i)</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

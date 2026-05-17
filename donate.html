@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate | Choudhari EduHealth India Foundation</title>
+<meta name="description" content="Support Dr. GharoGhari and BloodConnect — donate via Give.do, UPI, or direct bank transfer. 80G tax benefit available on all donations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ── PAGE-SPECIFIC ── */
+  .donate-hero { background: var(--navy); position: relative; overflow: hidden; }
+  .donate-hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(77,158,255,0.08) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(77,158,255,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  .donate-hero-inner {
+    max-width: var(--max-w); margin: 0 auto; padding: 72px 32px 64px;
+    position: relative; text-align: center;
+  }
+  .donate-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--blue-mid); margin-bottom: 20px;
+  }
+  .donate-hero-eyebrow::before, .donate-hero-eyebrow::after {
+    content: ''; display: block; width: 24px; height: 1px; background: var(--blue-mid); opacity: 0.5;
+  }
+  .donate-hero h1 {
+    font-family: var(--font-display); font-size: 50px; font-weight: 800;
+    color: white; line-height: 1.07; margin-bottom: 18px;
+  }
+  .donate-hero h1 span { color: var(--blue-mid); }
+  .donate-hero-sub {
+    font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.75;
+    max-width: 580px; margin: 0 auto 32px;
+  }
+  .donate-hero-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .hero-badge-pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 500;
+    padding: 8px 16px; border-radius: 100px;
+  }
+  .hero-badge-pill.active-pill { background: rgba(0,85,204,0.25); border-color: rgba(77,158,255,0.3); color: var(--blue-mid); }
+
+  /* ── CAMPAIGNS ── */
+  .campaigns-section { background: var(--gray-50); }
+  .campaigns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 44px; }
+  .campaign-card {
+    background: white; border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg); overflow: hidden;
+    box-shadow: var(--shadow-card); transition: var(--transition);
+  }
+  .campaign-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .campaign-card-top { height: 5px; }
+  .campaign-card-top.blue { background: var(--blue); }
+  .campaign-card-top.red { background: var(--red); }
+  .campaign-card-body { padding: 32px; }
+  .campaign-platform {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 14px;
+  }
+  .campaign-platform-dot { width: 6px; height: 6px; border-radius: 50%; background: #22cc66; animation: pulse 2s infinite; }
+  .campaign-platform-dot.coming { background: #F5A623; animation: none; }
+  .campaign-name {
+    font-family: var(--font-display); font-size: 26px; font-weight: 800;
+    color: var(--navy); margin-bottom: 6px;
+  }
+  .campaign-tagline { font-size: 14px; font-style: italic; margin-bottom: 16px; }
+  .campaign-tagline.blue { color: var(--blue); }
+  .campaign-tagline.red { color: var(--red); }
+  .campaign-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 24px; }
+  .campaign-amounts { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .amount-chip {
+    background: var(--gray-50); border: 1.5px solid var(--gray-100);
+    color: var(--navy); font-size: 14px; font-weight: 600;
+    padding: 9px 16px; border-radius: var(--radius-sm); cursor: pointer;
+    transition: var(--transition);
+  }
+  .amount-chip:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+  .amount-chip.red:hover { border-color: var(--red); color: var(--red); background: var(--red-light); }
+  .campaign-cta {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--blue); color: white; padding: 14px 24px;
+    border-radius: var(--radius-sm); font-size: 15px; font-weight: 600;
+    text-decoration: none; transition: var(--transition); width: 100%;
+  }
+  .campaign-cta:hover { background: #0044aa; }
+  .campaign-cta.red { background: var(--red); }
+  .campaign-cta.red:hover { background: #aa1800; }
+  .campaign-cta.disabled {
+    background: var(--gray-100); color: var(--gray-400); cursor: not-allowed; pointer-events: none;
+  }
+  .givedo-logo { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.7); }
+  .campaign-note { font-size: 12px; color: var(--gray-400); text-align: center; margin-top: 12px; }
+  .coming-banner {
+    background: #FFF8E7; border: 1px solid #F5D87A;
+    border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px;
+    font-size: 13px; color: #916500; display: flex; gap: 8px; align-items: flex-start;
+  }
+
+  /* ── DIRECT TRANSFER ── */
+  .transfer-section { background: white; }
+  .transfer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 44px; }
+
+  /* UPI card */
+  .upi-card {
+    background: var(--gray-50); border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg); padding: 32px; text-align: center;
+  }
+  .upi-icon { font-size: 40px; margin-bottom: 16px; }
+  .upi-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .upi-sub { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 24px; }
+  .upi-id-box {
+    background: white; border: 1.5px dashed var(--gray-100);
+    border-radius: var(--radius-md); padding: 20px; margin-bottom: 16px; position: relative;
+  }
+  .upi-id-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-400); margin-bottom: 8px; }
+  .upi-id-value { font-family: 'Courier New', monospace; font-size: 18px; font-weight: 700; color: var(--navy); }
+  .upi-id-value.placeholder { color: var(--gray-400); font-size: 14px; font-family: var(--font-body); font-style: italic; }
+  .copy-btn {
+    background: var(--blue-light); color: var(--blue); border: none;
+    font-family: var(--font-body); font-size: 12px; font-weight: 600;
+    padding: 6px 14px; border-radius: 100px; cursor: pointer;
+    transition: var(--transition); margin-top: 10px;
+  }
+  .copy-btn:hover { background: var(--blue); color: white; }
+  .upi-apps { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .upi-app-tag {
+    font-size: 12px; font-weight: 500; color: var(--text-secondary);
+    background: white; border: 1px solid var(--gray-100);
+    padding: 5px 12px; border-radius: 100px;
+  }
+
+  /* NEFT card */
+  .neft-card {
+    background: var(--navy); border-radius: var(--radius-lg); padding: 32px;
+  }
+  .neft-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .neft-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 28px; line-height: 1.6; }
+  .neft-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.07); gap: 16px;
+  }
+  .neft-row:last-of-type { border-bottom: none; }
+  .neft-key { font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.07em; flex-shrink: 0; }
+  .neft-val { font-family: 'Courier New', monospace; font-size: 14px; color: white; font-weight: 600; text-align: right; word-break: break-all; }
+  .neft-val.highlight { color: var(--blue-mid); }
+  .neft-copy-all {
+    display: block; width: 100%; margin-top: 20px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.75); font-family: var(--font-body);
+    font-size: 13px; font-weight: 600; padding: 12px;
+    border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition);
+  }
+  .neft-copy-all:hover { background: rgba(255,255,255,0.14); color: white; }
+
+  /* ── 80G BENEFIT ── */
+  .tax-section { background: var(--blue); padding: 64px 0; }
+  .tax-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
+  .tax-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 36px; }
+  .tax-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-lg); padding: 28px; }
+  .tax-card-num { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: white; margin-bottom: 6px; }
+  .tax-card-label { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+  .tax-cred {
+    margin-top: 36px; background: rgba(0,0,0,0.15); border-radius: var(--radius-md);
+    padding: 20px 28px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center;
+  }
+  .tax-cred-item { }
+  .tax-cred-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .tax-cred-val { font-family: 'Courier New', monospace; font-size: 14px; color: white; font-weight: 600; }
+  .tax-note { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+  /* ── DONOR FAQ ── */
+  .donor-faq { background: var(--gray-50); }
+
+  /* ── IMPACT PROMISE ── */
+  .promise-section { background: white; }
+  .promise-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; }
+  .promise-card { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 28px; }
+  .promise-icon { font-size: 28px; margin-bottom: 14px; }
+  .promise-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .promise-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+  .faq-item { border-bottom: 1px solid var(--gray-100); padding: 20px 0; cursor: pointer; }
+  .faq-item:first-child { border-top: 1px solid var(--gray-100); }
+  .faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 15px; font-weight: 600; color: var(--navy); }
+  .faq-arrow { font-size: 18px; color: var(--blue); transition: var(--transition); flex-shrink: 0; }
+  .faq-a { font-size: 14px; color: var(--text-secondary); line-height: 1.75; padding-top: 12px; display: none; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-arrow { transform: rotate(45deg); }
+
+  @media (max-width: 960px) {
+    .campaigns-grid { grid-template-columns: 1fr; }
+    .transfer-grid { grid-template-columns: 1fr; }
+    .tax-grid { grid-template-columns: 1fr 1fr; }
+    .promise-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .donate-hero h1 { font-size: 34px; }
+    .tax-grid { grid-template-columns: 1fr; }
+    .promise-grid { grid-template-columns: 1fr; }
+    .donate-hero-badges { flex-direction: column; align-items: center; }
+    .tax-cred { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Choudhari <span>EduHealth</span><br>India Foundation</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
+      <li><a href="bloodconnect.html">BloodConnect</a></li>
+      <li><a href="donate.html" class="active">Donate</a></li>
+      <li><a href="csr-partnership.html" class="nav-cta">CSR Partnership</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Donate</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="donate-hero">
+  <div class="donate-hero-grid"></div>
+  <div class="donate-hero-inner">
+    <div class="donate-hero-eyebrow">Make a difference today</div>
+    <h1>Every rupee goes<br><span>to the ground.</span></h1>
+    <p class="donate-hero-sub">Your donation funds free medical care for rural villages, and a national blood donor network that saves lives in emergencies. No intermediary margins. Full 80G tax benefit.</p>
+    <div class="donate-hero-badges">
+      <div class="hero-badge-pill active-pill">✓ 80G Certified — 50% Tax Deduction</div>
+      <div class="hero-badge-pill">🏛 Section 8 Non-Profit</div>
+      <div class="hero-badge-pill">🇮🇳 Give.do Verified</div>
+      <div class="hero-badge-pill">🔒 Secure &amp; Transparent</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN CARDS -->
+<section class="section campaigns-section">
+  <div class="section-inner">
+    <div class="section-label">Give.do Campaigns</div>
+    <h2 class="section-h">Choose a cause to support.</h2>
+    <p class="section-sub">Both campaigns run on Give.do — India's trusted fundraising platform. Your donation is processed securely and you receive an 80G receipt automatically.</p>
+
+    <div class="campaigns-grid">
+
+      <!-- Dr. GharoGhari -->
+      <div class="campaign-card">
+        <div class="campaign-card-top blue"></div>
+        <div class="campaign-card-body">
+          <div class="campaign-platform">
+            <div class="campaign-platform-dot"></div>
+            Live on Give.do
+          </div>
+          <div class="campaign-name">Dr. GharoGhari</div>
+          <div class="campaign-tagline blue">"The doctor who comes home"</div>
+          <div class="campaign-desc">Fund the mobile OPD van that brings free consultations, diagnostics, and medicines to villages 60–80 km from the nearest hospital. Every ₹500 covers a full OPD consultation including medicines. Every ₹25,000 funds one day of operations — two villages, 50+ patients.</div>
+          <div class="campaign-amounts">
+            <div class="amount-chip">₹500</div>
+            <div class="amount-chip">₹2,000</div>
+            <div class="amount-chip">₹5,000</div>
+            <div class="amount-chip">₹25,000</div>
+          </div>
+          <a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank" rel="noopener" class="campaign-cta">
+            Donate via Give.do <span class="givedo-logo">↗</span>
+          </a>
+          <div class="campaign-note">Secure payment · 80G receipt issued automatically by Give.do</div>
+        </div>
+      </div>
+
+      <!-- BloodConnect -->
+      <div class="campaign-card">
+        <div class="campaign-card-top red"></div>
+        <div class="campaign-card-body">
+          <div class="campaign-platform">
+            <div class="campaign-platform-dot coming"></div>
+            Coming Soon on Give.do
+          </div>
+          <div class="campaign-name">BloodConnect</div>
+          <div class="campaign-tagline red">"No patient should wait for blood."</div>
+          <div class="coming-banner">
+            ⏳ This Give.do campaign is being set up. Until it goes live, you can donate via UPI or direct bank transfer below, referencing "BloodConnect" in your remarks.
+          </div>
+          <div class="campaign-desc">Fund the technology infrastructure, coordinator network, and community outreach that powers our national voluntary blood donor network — connecting donors to patients in real time, at zero cost to the patient.</div>
+          <div class="campaign-amounts">
+            <div class="amount-chip red">₹1,000</div>
+            <div class="amount-chip red">₹5,000</div>
+            <div class="amount-chip red">₹10,000</div>
+            <div class="amount-chip red">₹50,000</div>
+          </div>
+          <a href="#direct-transfer" class="campaign-cta red">
+            Donate via Bank Transfer ↓
+          </a>
+          <div class="campaign-note">Give.do campaign link will be added here once live</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DIRECT TRANSFER -->
+<section class="section transfer-section" id="direct-transfer">
+  <div class="section-inner">
+    <div class="section-label">Direct Transfer</div>
+    <h2 class="section-h">Prefer to transfer directly?</h2>
+    <p class="section-sub">You can donate directly via UPI or bank transfer. Please email us at <a href="mailto:contact@choudhari.ngo" style="color:var(--blue);font-weight:600;">contact@choudhari.ngo</a> after transferring so we can issue your 80G receipt promptly.</p>
+
+    <div class="transfer-grid">
+
+      <!-- UPI -->
+      <div class="upi-card">
+        <div class="upi-icon">📱</div>
+        <div class="upi-title">Pay via UPI</div>
+        <div class="upi-sub">Use any UPI app — GPay, PhonePe, Paytm, BHIM — to donate instantly. Works 24×7, any amount.</div>
+        <div class="upi-id-box">
+          <div class="upi-id-label">UPI ID</div>
+          <div class="upi-id-value placeholder">Coming soon — use bank transfer for now</div>
+        </div>
+        <div class="upi-apps">
+          <span class="upi-app-tag">Google Pay</span>
+          <span class="upi-app-tag">PhonePe</span>
+          <span class="upi-app-tag">Paytm</span>
+          <span class="upi-app-tag">BHIM</span>
+          <span class="upi-app-tag">Any UPI App</span>
+        </div>
+        <div style="margin-top:20px; font-size:13px; color:var(--gray-400); line-height:1.65;">
+          After payment, email <a href="mailto:contact@choudhari.ngo" style="color:var(--blue); font-weight:600;">contact@choudhari.ngo</a> with your name, amount, UTR number, and PAN to receive your 80G receipt.
+        </div>
+      </div>
+
+      <!-- NEFT / Bank Transfer -->
+      <div class="neft-card">
+        <div class="neft-title">Bank Transfer — NEFT / RTGS / IMPS</div>
+        <div class="neft-sub">Transfer directly to our Axis Bank account. Suitable for larger donations, corporate cheques, and institutional transfers.</div>
+        <div class="neft-row">
+          <span class="neft-key">Account Name</span>
+          <span class="neft-val">Choudhari EduHealth India Foundation</span>
+        </div>
+        <div class="neft-row">
+          <span class="neft-key">Account Number</span>
+          <span class="neft-val highlight">925010038947028</span>
+        </div>
+        <div class="neft-row">
+          <span class="neft-key">IFSC Code</span>
+          <span class="neft-val highlight">UTIB0003099</span>
+        </div>
+        <div class="neft-row">
+          <span class="neft-key">Bank &amp; Branch</span>
+          <span class="neft-val">Axis Bank<br>Gadge Nagar, Amravati</span>
+        </div>
+        <div class="neft-row">
+          <span class="neft-key">Account Type</span>
+          <span class="neft-val">Current Account</span>
+        </div>
+        <button class="neft-copy-all" onclick="copyBankDetails()">📋 Copy Bank Details</button>
+        <div style="margin-top:16px; font-size:12px; color:rgba(255,255,255,0.4); line-height:1.65;">
+          After transfer, email <a href="mailto:contact@choudhari.ngo" style="color:var(--blue-mid);">contact@choudhari.ngo</a> with your name, amount, UTR/transaction ref, and PAN for your 80G receipt.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 80G TAX BENEFIT -->
+<section class="tax-section">
+  <div class="tax-inner">
+    <div class="section-label" style="color:rgba(255,255,255,0.6); justify-content:center;">
+      <span style="display:block;width:20px;height:2px;background:rgba(255,255,255,0.4);"></span>
+      Tax Benefit
+      <span style="display:block;width:20px;height:2px;background:rgba(255,255,255,0.4);"></span>
+    </div>
+    <h2 class="section-h" style="color:white; text-align:center;">Your donation is<br>tax deductible.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.65); text-align:center; margin:0 auto 0;">We are provisionally approved under Section 80G of the Income Tax Act. All donations — via Give.do, UPI, or bank transfer — are eligible for 50% tax deduction.</p>
+    <div class="tax-grid">
+      <div class="tax-card">
+        <div class="tax-card-num">50%</div>
+        <div class="tax-card-label">Tax deduction on your donation amount under Section 80G of the Income Tax Act, 1961.</div>
+      </div>
+      <div class="tax-card">
+        <div class="tax-card-num">AY 29</div>
+        <div class="tax-card-label">Provisional 80G certification valid through Assessment Year 2028–2029. Legally valid for deduction.</div>
+      </div>
+      <div class="tax-card">
+        <div class="tax-card-num">Auto</div>
+        <div class="tax-card-label">Give.do donations receive an 80G receipt automatically. Direct transfers — email us with your PAN.</div>
+      </div>
+    </div>
+    <div class="tax-cred">
+      <div class="tax-cred-item">
+        <div class="tax-cred-label">80G Reference Number</div>
+        <div class="tax-cred-val">AAMCC7204MF20251</div>
+      </div>
+      <div class="tax-cred-item">
+        <div class="tax-cred-label">PAN</div>
+        <div class="tax-cred-val">AAMCC7204M</div>
+      </div>
+      <div class="tax-cred-item">
+        <div class="tax-cred-label">CIN</div>
+        <div class="tax-cred-val">U88900MH2025NPL447942</div>
+      </div>
+      <div class="tax-cred-item">
+        <div class="tax-cred-label">NGO Darpan</div>
+        <div class="tax-cred-val">MH/2025/0643345</div>
+      </div>
+    </div>
+    <div class="tax-note" style="text-align:center; margin-top:20px;">Provisional 80G approved 18 June 2025 by the Income Tax Department. We are in the process of permanent approval.</div>
+  </div>
+</section>
+
+<!-- IMPACT PROMISE -->
+<section class="section promise-section">
+  <div class="section-inner">
+    <div class="section-label">Our Promise to Donors</div>
+    <h2 class="section-h">We take donor trust seriously.</h2>
+    <p class="section-sub">Every rupee donated is accounted for. We publish fund utilisation and are building the reporting infrastructure for full donor transparency.</p>
+    <div class="promise-grid">
+      <div class="promise-card">
+        <div class="promise-icon">📊</div>
+        <div class="promise-title">Fund Utilisation Reports</div>
+        <div class="promise-desc">We track exactly where every donation goes — by programme, by month. Available on request for any donor at any time.</div>
+      </div>
+      <div class="promise-card">
+        <div class="promise-icon">📍</div>
+        <div class="promise-title">Field Impact Updates</div>
+        <div class="promise-desc">Donors who share their email receive periodic updates — villages reached, patients treated, lives impacted. Real data, not just testimonials.</div>
+      </div>
+      <div class="promise-card">
+        <div class="promise-icon">🔒</div>
+        <div class="promise-title">Registered &amp; Verified</div>
+        <div class="promise-desc">Section 8 company, NITI Aayog NGO Darpan registered, provisional 80G &amp; 12A certified. Fully verifiable on government portals.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONOR FAQ -->
+<section class="section donor-faq">
+  <div class="section-inner" style="max-width:760px;">
+    <div class="section-label">Donor Questions</div>
+    <h2 class="section-h">Common questions answered.</h2>
+    <div style="margin-top:32px;">
+      <div class="faq-item">
+        <div class="faq-q">How do I get my 80G receipt? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">If you donate via Give.do, your 80G receipt is issued automatically by the platform after your donation. If you transfer directly via UPI or bank transfer, email us at <a href="mailto:contact@choudhari.ngo" style="color:var(--blue);">contact@choudhari.ngo</a> with your name, PAN number, transaction reference, and amount — we'll issue your receipt within 3 working days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my donation really tax deductible? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes. Choudhari EduHealth India Foundation holds a provisional 80G certification (Ref: AAMCC7204MF20251) approved by the Income Tax Department on 18 June 2025, valid through AY 2028–2029. Provisional 80G is legally valid — you can claim 50% of your donation amount as a deduction from your taxable income under Section 80G of the Income Tax Act, 1961.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I donate in someone's name or as a gift? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes — email us at <a href="mailto:contact@choudhari.ngo" style="color:var(--blue);">contact@choudhari.ngo</a> after making your donation with the name and details you'd like acknowledged. We can also send a personalised acknowledgement letter to the intended recipient if you share their contact.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I set up a recurring monthly donation? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes — Give.do supports recurring donation setups directly on the campaign page. For direct transfers, you can set up a standing instruction with your bank. Email us and we'll help coordinate acknowledgement and reporting for recurring donors.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if I donate to BloodConnect before the Give.do campaign is live? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Use the direct bank transfer or UPI option and mention "BloodConnect" in your payment remarks. Email us with your details and we'll issue your 80G receipt and earmark your contribution specifically to the BloodConnect programme. The Give.do link will be updated on this page as soon as the campaign is live.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can international donors contribute? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">We do not hold FCRA registration yet, which means we cannot legally accept foreign contributions at this time. We are working toward FCRA registration as a next step. If you are an NRI with an Indian bank account (NRO/NRE), please email us and we'll advise on the best way to contribute.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Choudhari <span>EduHealth</span><br>India Foundation</div>
+        <div class="footer-desc">A Section 8 Non-Profit delivering mobile healthcare and national blood access programmes across rural India since 2025. Built by technology professionals with a mission rooted in ground reality.</div>
+        <div class="footer-reg">
+          CIN: U88900MH2025NPL447942<br>
+          PAN: AAMCC7204M<br>
+          NGO Darpan: MH/2025/0643345 · Sec 8 Lic: 168397<br>
+          12A &amp; 80G: AAMCC7204MF20251
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Programmes</div>
+        <ul class="footer-col-links">
+          <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
+          <li><a href="bloodconnect.html">BloodConnect</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Organisation</div>
+        <ul class="footer-col-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#credentials">Credentials</a></li>
+          <li><a href="csr-partnership.html">CSR Partnership</a></li>
+          <li><a href="donate.html" style="color:var(--red);font-weight:600;">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="mailto:contact@choudhari.ngo">contact@choudhari.ngo</a></li>
+          <li><a href="https://choudhari.ngo">choudhari.ngo</a></li>
+          <li><a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank">Give.do Campaigns ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Choudhari EduHealth India Foundation. All rights reserved. | <a href="#">Privacy Policy</a></div>
+      <div class="footer-80g">80G Certified · CSR Eligible · Schedule VII (i)</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Copy bank details
+  function copyBankDetails() {
+    const details = `Choudhari EduHealth India Foundation
+Account Number: 925010038947028
+IFSC Code: UTIB0003099
+Bank: Axis Bank, Gadge Nagar, Amravati
+PAN: AAMCC7204M`;
+    navigator.clipboard.writeText(details).then(() => {
+      const btn = document.querySelector('.neft-copy-all');
+      btn.textContent = '✅ Copied!';
+      setTimeout(() => btn.textContent = '📋 Copy Bank Details', 2500);
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>

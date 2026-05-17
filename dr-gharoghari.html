@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. GharoGhari — Mobile OPD | Choudhari EduHealth India Foundation</title>
+<meta name="description" content="Dr. GharoGhari is a dual-shift mobile OPD van bringing free consultations, diagnostics and medicines to rural India. Sponsor a van and transform healthcare access.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .prog-tagline { font-size: 18px; color: var(--blue); font-style: italic; margin-top: -8px; margin-bottom: 20px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .problem-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 36px; }
+  .problem-card { background: white; border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-card); }
+  .problem-num { font-family: var(--font-display); font-size: 38px; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+  .problem-label { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  .how-step { display: flex; gap: 24px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--gray-100); }
+  .how-step:last-child { border-bottom: none; padding-bottom: 0; }
+  .how-step:first-child { padding-top: 0; }
+  .how-num { width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: white; font-family: var(--font-display); font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .how-title { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--navy); margin-bottom: 6px; }
+  .how-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+  .how-time { display: inline-block; background: var(--blue-light); color: var(--blue); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin-top: 8px; }
+
+  .budget-section { background: var(--navy); padding: 80px 0; }
+  .budget-section .section-label { color: var(--blue-mid); }
+  .budget-section .section-label::before { background: var(--blue-mid); }
+  .budget-section .section-h { color: white; }
+  .budget-section .section-sub { color: rgba(255,255,255,0.55); }
+  .budget-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .budget-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 28px; }
+  .budget-card-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px; }
+  .budget-card-amount { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--blue-mid); margin-bottom: 16px; }
+  .budget-line { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 13px; }
+  .budget-line:last-child { border-bottom: none; }
+  .budget-key { color: rgba(255,255,255,0.55); }
+  .budget-val { color: white; font-weight: 600; }
+  .budget-total { margin-top: 8px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; }
+  .budget-total-key { font-size: 13px; color: var(--blue-mid); font-weight: 600; }
+  .budget-total-val { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: white; }
+  .budget-year1 { grid-column: 1/-1; background: rgba(0,85,204,0.2); border: 1px solid rgba(77,158,255,0.3); border-radius: var(--radius-lg); padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; }
+  .budget-year1-label { font-size: 15px; color: rgba(255,255,255,0.7); }
+  .budget-year1-amount { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: white; }
+  .budget-year1-note { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  .expansion-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 36px; }
+  .expansion-card { background: white; border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 20px; text-align: center; box-shadow: var(--shadow-card); }
+  .expansion-phase { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 8px; }
+  .expansion-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .expansion-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+  .expansion-arrow { color: var(--gray-100); font-size: 24px; display: flex; align-items: center; justify-content: center; }
+
+  .sponsor-section { background: var(--gray-50); padding: 80px 0; }
+  .sponsor-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 440px; gap: 60px; align-items: start; }
+  .form-card { background: white; border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-lg); }
+  .form-card-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .form-card-sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.6; }
+  .form-submit { width:100%; background:var(--blue); color:white; border:none; padding:14px; border-radius:var(--radius-sm); font-family:var(--font-body); font-size:15px; font-weight:600; cursor:pointer; transition:var(--transition); }
+  .form-submit:hover { background:#0044aa; }
+
+  @media (max-width: 960px) {
+    .two-col { grid-template-columns: 1fr; }
+    .three-col { grid-template-columns: 1fr; }
+    .problem-cards { grid-template-columns: 1fr 1fr; }
+    .budget-grid { grid-template-columns: 1fr; }
+    .budget-year1 { flex-direction: column; gap: 8px; }
+    .expansion-grid { grid-template-columns: 1fr 1fr; }
+    .sponsor-wrap { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .problem-cards { grid-template-columns: 1fr; }
+    .expansion-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Choudhari <span>EduHealth</span><br>India Foundation</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="dr-gharoghari.html" class="active">Dr. GharoGhari</a></li>
+      <li><a href="bloodconnect.html">BloodConnect</a></li>
+      <li><a href="donate.html" style="color:var(--red);font-weight:600;">Donate</a></li>
+      <li><a href="csr-partnership.html" class="nav-cta">CSR Partnership</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="index.html#programmes">Programmes</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Dr. GharoGhari</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner two-col">
+    <div>
+      <span class="status-badge upcoming">Phase 1 Pilot — Launching 2026</span>
+      <div class="section-label" style="margin-top:16px;">Mobile OPD Programme</div>
+      <h1>Dr. <span>GharoGhari</span></h1>
+      <div class="prog-tagline">"The doctor who comes home"</div>
+      <p class="page-hero-sub">A fully-equipped mobile OPD van operating dual shifts — morning and evening — to serve rural villages where a qualified doctor may visit only once a month, if ever. One van. Two villages per day. Free care for all.</p>
+      <div class="btn-row">
+        <a href="#sponsor" class="btn-primary">Become a Programme Sponsor</a>
+        <a href="#how-it-works" class="btn-outline">See How It Works</a>
+      </div>
+    </div>
+    <div class="info-card-dark">
+      <div class="info-card-dark-label">Programme Reach — Per Van</div>
+      <div class="info-card-dark-stat-n">52+</div>
+      <div class="info-card-dark-stat-l">Unique villages served every month</div>
+      <div class="info-card-dark-divider"></div>
+      <div class="info-card-dark-grid">
+        <div>
+          <div class="info-card-dark-mini-n">280–350</div>
+          <div class="info-card-dark-mini-l">Patients / Week</div>
+        </div>
+        <div>
+          <div class="info-card-dark-mini-n">26</div>
+          <div class="info-card-dark-mini-l">Working Days/Month</div>
+        </div>
+        <div>
+          <div class="info-card-dark-mini-n">2</div>
+          <div class="info-card-dark-mini-l">OPD Shifts / Day</div>
+        </div>
+        <div>
+          <div class="info-card-dark-mini-n">₹0</div>
+          <div class="info-card-dark-mini-l">Cost to Patient</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div class="strip-stat"><div class="strip-stat-n">52+</div><div class="strip-stat-l">Villages / Month</div></div>
+    <div class="strip-stat"><div class="strip-stat-n">350</div><div class="strip-stat-l">Patients / Week</div></div>
+    <div class="strip-stat"><div class="strip-stat-n">6 hrs</div><div class="strip-stat-l">OPD Time / Day</div></div>
+    <div class="strip-stat"><div class="strip-stat-n">5</div><div class="strip-stat-l">Qualified Staff</div></div>
+    <div class="strip-stat"><div class="strip-stat-n">₹0</div><div class="strip-stat-l">Cost to Patient</div></div>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section class="section" style="background:white;">
+  <div class="section-inner">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-h">Rural India's healthcare gap<br>is a crisis hiding in plain sight.</h2>
+    <p class="section-sub">For hundreds of millions of Indians living in rural areas, accessing a qualified doctor requires hours of travel, lost wages, and often — giving up entirely.</p>
+    <div class="problem-cards">
+      <div class="problem-card">
+        <div class="problem-num">67%</div>
+        <div class="problem-label">of India's population lives in rural areas, yet only <strong>33% of the country's hospitals</strong> are located there.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">1:10,000</div>
+        <div class="problem-label">The doctor-to-patient ratio in many rural districts — against a WHO recommendation of 1:1000.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">40%</div>
+        <div class="problem-label">of illnesses in rural India go undiagnosed because patients cannot access or afford even basic primary care.</div>
+      </div>
+    </div>
+    <p style="margin-top:28px; font-size:15px; color:var(--text-secondary); line-height:1.8; max-width:680px;">The daily-wage farmer cannot take a day off to travel to a district hospital. The elderly woman with high blood pressure has no one to check it regularly. The child with a fever gets traditional remedies because the nearest qualified doctor is 60 km away. <strong style="color:var(--navy);">Dr. GharoGhari brings the doctor to them.</strong></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works" style="background:var(--gray-50);">
+  <div class="section-inner">
+    <div class="two-col">
+      <div>
+        <div class="section-label">How It Works</div>
+        <h2 class="section-h">A day in the life of<br>the Dr. GharoGhari van.</h2>
+        <p class="section-sub">Our operational model is designed around the real rhythm of rural life — not office hours. Dual shifts ensure we reach daily-wage workers, farmers, and elderly residents who are only available early morning or after dark.</p>
+
+        <div style="margin-top:36px;">
+          <div class="how-step">
+            <div class="how-num">1</div>
+            <div>
+              <div class="how-title">Departure from Base</div>
+              <div class="how-desc">The van departs from its district base with a full team: MBBS doctor, nurse, pharmacist, driver, and programme coordinator. Medicine inventory is checked and replenished nightly.</div>
+              <span class="how-time">7:30 AM – 8:45 AM</span>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">2</div>
+            <div>
+              <div class="how-title">Morning OPD — Village A</div>
+              <div class="how-desc">3-hour OPD at the first village. Consultations, BP / blood sugar / hemoglobin / ECG diagnostics, medicine dispensing, and referrals. ASHA workers pre-mobilise patients the day before.</div>
+              <span class="how-time">9:00 AM – 12:00 PM</span>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">3</div>
+            <div>
+              <div class="how-title">Admin &amp; Rest Window</div>
+              <div class="how-desc">Travel to Village B, lunch break, data entry into EMR system, stock reconciliation, and record uploads to the cloud dashboard. Staff rest ensures consistent care quality through the evening shift.</div>
+              <span class="how-time">12:00 PM – 5:30 PM</span>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">4</div>
+            <div>
+              <div class="how-title">Evening OPD — Village B</div>
+              <div class="how-desc">3-hour evening OPD serving daily-wage workers and farmers returning from fields. LED floodlights and a powered OPD space ensure full operations after dark. This is the most attended shift.</div>
+              <span class="how-time">6:00 PM – 9:00 PM</span>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">5</div>
+            <div>
+              <div class="how-title">Return &amp; Daily Report</div>
+              <div class="how-desc">Van returns to base. Daily service summary auto-generated: patients seen, conditions treated, medicines dispensed, referrals made. Shared with the Foundation dashboard and available to CSR partners.</div>
+              <span class="how-time">9:00 PM – 10:30 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="section-label">Services Offered</div>
+          <div style="margin-top:16px;">
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">OPD Consultations</span><span class="detail-val">Free, unlimited</span></div>
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">Blood Pressure Check</span><span class="detail-val">Every patient</span></div>
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">Blood Sugar (Glucometer)</span><span class="detail-val">On indication</span></div>
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">Hemoglobin Testing</span><span class="detail-val">Women &amp; children priority</span></div>
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">ECG</span><span class="detail-val">Cardiac screening</span></div>
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">Medicine Dispensing</span><span class="detail-val">Free at point of care</span></div>
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">Referrals</span><span class="detail-val">To district hospitals / CHC</span></div>
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">Health Awareness Sessions</span><span class="detail-val">Preventive care</span></div>
+            <div class="detail-row" style="font-size:14px;"><span class="detail-key">Medical Records</span><span class="detail-val">EMR — each patient</span></div>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="section-label">Village Selection Criteria</div>
+          <ul class="check-list" style="margin-top:12px;">
+            <li><div class="check-icon">✓</div><div>Located 10+ km from nearest PHC or sub-centre</div></li>
+            <li><div class="check-icon">✓</div><div>Identified as healthcare-deficient by NHM or panchayat</div></li>
+            <li><div class="check-icon">✓</div><div>High proportion of tribal, migrant, or women-headed households</div></li>
+            <li><div class="check-icon">✓</div><div>No access to qualified doctor more than once monthly</div></li>
+            <li><div class="check-icon">✓</div><div>Active ASHA worker or Anganwadi for coordination</div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="section-label">Community Integration</div>
+          <div style="margin-top:12px; font-size:14px; color:var(--text-secondary); line-height:1.75;">
+            Awareness begins 48–72 hours before every visit. ASHA workers do home visits, WhatsApp posters go to village groups, and the van coordinator uses a loudspeaker the day before. Gram Sevaks, school teachers, and Sarpanch networks are all activated.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF & EQUIPMENT -->
+<section class="section" style="background:white;">
+  <div class="section-inner">
+    <div class="section-label">What's On the Van</div>
+    <h2 class="section-h">Fully equipped. Fully staffed.</h2>
+    <p class="section-sub">Every Dr. GharoGhari van is a self-contained primary health clinic on wheels — with its own power, pharmacy, diagnostic equipment, and digital records system.</p>
+    <div style="margin-top:40px;" class="two-col">
+      <div>
+        <h3 style="font-family:var(--font-display); font-size:18px; font-weight:700; color:var(--navy); margin-bottom:20px;">🧑‍⚕️ Clinical Team</h3>
+        <div class="detail-table">
+          <div class="detail-row"><span class="detail-key">MBBS Doctor</span><span class="detail-val">OPD consultations, diagnostics</span></div>
+          <div class="detail-row"><span class="detail-key">Nurse / Attendant</span><span class="detail-val">BP, injections, wound care</span></div>
+          <div class="detail-row"><span class="detail-key">Pharmacist</span><span class="detail-val">Dispensing, inventory</span></div>
+          <div class="detail-row"><span class="detail-key">Driver + Helper</span><span class="detail-val">Travel, setup, logistics</span></div>
+          <div class="detail-row"><span class="detail-key">Programme Coordinator</span><span class="detail-val">Route, data sync, community liaison</span></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-display); font-size:18px; font-weight:700; color:var(--navy); margin-bottom:20px;">🔬 Equipment &amp; Infrastructure</h3>
+        <div class="detail-table">
+          <div class="detail-row"><span class="detail-key">Custom Medical Van</span><span class="detail-val">OPD-fitted, climate controlled</span></div>
+          <div class="detail-row"><span class="detail-key">Diagnostic Kits</span><span class="detail-val">BP, glucometer, Hb, ECG</span></div>
+          <div class="detail-row"><span class="detail-key">Pharmacy Setup</span><span class="detail-val">Storage, refrigerator, stock</span></div>
+          <div class="detail-row"><span class="detail-key">Solar + Generator</span><span class="detail-val">Power independence</span></div>
+          <div class="detail-row"><span class="detail-key">LED Floodlights</span><span class="detail-val">Full evening operations</span></div>
+          <div class="detail-row"><span class="detail-key">EMR System</span><span class="detail-val">Tablet + offline-first app</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="budget-section">
+  <div class="section-inner">
+    <div class="section-label">Programme Budget</div>
+    <h2 class="section-h">Transparent financials.<br>Every rupee accounted for.</h2>
+    <p class="section-sub">Our budget is fully documented and available for review. Sponsor a van and receive a complete fund utilisation statement monthly.</p>
+    <div class="budget-grid">
+      <div class="budget-card">
+        <div class="budget-card-title">Capital Expenditure — One Time</div>
+        <div class="budget-card-amount">₹28.5 L</div>
+        <div class="budget-line"><span class="budget-key">Medical Van + Custom Fitout</span><span class="budget-val">₹18,00,000</span></div>
+        <div class="budget-line"><span class="budget-key">Diagnostic Equipment</span><span class="budget-val">₹6,00,000</span></div>
+        <div class="budget-line"><span class="budget-key">Tablets + EMR Setup</span><span class="budget-val">₹1,00,000</span></div>
+        <div class="budget-line"><span class="budget-key">Solar + Power Backup</span><span class="budget-val">₹1,00,000</span></div>
+        <div class="budget-line"><span class="budget-key">Medicine Inventory (Initial)</span><span class="budget-val">₹2,00,000</span></div>
+        <div class="budget-line"><span class="budget-key">Branding &amp; Signage</span><span class="budget-val">₹50,000</span></div>
+        <div class="budget-total"><span class="budget-total-key">Total CapEx</span><span class="budget-total-val">₹28,50,000</span></div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-card-title">Operating Expenses — Monthly</div>
+        <div class="budget-card-amount">₹3.2 L/mo</div>
+        <div class="budget-line"><span class="budget-key">Staff Salaries (5 roles)</span><span class="budget-val">₹1,90,000</span></div>
+        <div class="budget-line"><span class="budget-key">Medicines &amp; Consumables</span><span class="budget-val">₹50,000</span></div>
+        <div class="budget-line"><span class="budget-key">Fuel + Maintenance</span><span class="budget-val">₹40,000</span></div>
+        <div class="budget-line"><span class="budget-key">Admin &amp; Communication</span><span class="budget-val">₹30,000</span></div>
+        <div class="budget-line"><span class="budget-key">Licensing &amp; Training</span><span class="budget-val">₹10,000</span></div>
+        <div class="budget-total"><span class="budget-total-key">Annual OpEx (12 months)</span><span class="budget-total-val">₹38,40,000</span></div>
+      </div>
+      <div class="budget-year1">
+        <div>
+          <div class="budget-year1-label">Total Year 1 Investment (CapEx + OpEx) — per van</div>
+          <div class="budget-year1-note">Covers full van setup, staffing, medicines &amp; operations for 12 months</div>
+        </div>
+        <div class="budget-year1-amount">₹66.9 Lakhs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPANSION -->
+<section class="section" style="background:var(--gray-50);">
+  <div class="section-inner">
+    <div class="section-label">Scale &amp; Expansion</div>
+    <h2 class="section-h">One pilot. National vision.</h2>
+    <p class="section-sub">The Dr. GharoGhari model is built to replicate. Every van that operates becomes a tested playbook — ready to deploy in the next district, the next state.</p>
+    <div class="expansion-grid">
+      <div class="expansion-card">
+        <div class="expansion-phase">Phase 1 · 2026</div>
+        <div class="expansion-title">Pilot Van</div>
+        <div class="expansion-desc">First van launched. Operations, routes, and reporting systems validated on the ground.</div>
+      </div>
+      <div class="expansion-card">
+        <div class="expansion-phase">Phase 2 · 2027</div>
+        <div class="expansion-title">District Expansion</div>
+        <div class="expansion-desc">Second and third vans deployed in adjacent districts using the proven model and playbook.</div>
+      </div>
+      <div class="expansion-card">
+        <div class="expansion-phase">Phase 3 · 2028</div>
+        <div class="expansion-title">State Level</div>
+        <div class="expansion-desc">Multiple vans operating across the state with a centralised coordination and reporting hub.</div>
+      </div>
+      <div class="expansion-card">
+        <div class="expansion-phase">Vision · 2030</div>
+        <div class="expansion-title">National Programme</div>
+        <div class="expansion-desc">A national fleet of mobile OPD vans covering India's most underserved rural districts.</div>
+      </div>
+    </div>
+    <p style="margin-top:20px; font-size:14px; color:var(--gray-400); text-align:center;">Each additional CSR sponsor enables one more van — and one more district covered.</p>
+  </div>
+</section>
+
+<!-- SPONSOR FORM -->
+<section id="sponsor" class="sponsor-section">
+  <div class="sponsor-wrap">
+    <div>
+      <div class="section-label">Become a Sponsor</div>
+      <h2 class="section-h">Fund a van.<br>Change a district.</h2>
+      <p class="section-sub">A full van sponsorship (₹66.9 Lakhs) covers Year 1 end-to-end — the van, staff, medicines, and all operations. Your name on the van, your impact in 52 villages every month.</p>
+      <div style="margin-top:32px;">
+        <ul class="check-list">
+          <li><div class="check-icon">✓</div><div><strong>Van naming rights</strong> "Presented by [Your Company]" prominently on both sides of the van.</div></li>
+          <li><div class="check-icon">✓</div><div><strong>Monthly impact reports</strong> Patient data, village logs, medicine dispensed — structured for your board and CSR-2 filing.</div></li>
+          <li><div class="check-icon">✓</div><div><strong>Field visit access</strong> Bring your leadership team to see the programme in action.</div></li>
+          <li><div class="check-icon">✓</div><div><strong>Full 80G documentation</strong> 50% tax deduction. All paperwork ready for your CA.</div></li>
+          <li><div class="check-icon">✓</div><div><strong>Partial sponsorships also accepted</strong> Fund specific components — staff, medicines, or diagnostics — at any amount.</div></li>
+        </ul>
+        <div style="margin-top:24px; padding:20px 24px; background:var(--blue-light); border-radius:var(--radius-md); border-left:3px solid var(--blue);">
+          <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); margin-bottom:6px;">Direct Contact</div>
+          <div style="font-size:15px; color:var(--navy);">📧 <a href="mailto:contact@choudhari.ngo" style="color:var(--blue); font-weight:600; text-decoration:none;">contact@choudhari.ngo</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="form-card" id="form-container">
+      <div class="form-card-title">Programme Sponsorship Enquiry</div>
+      <div class="form-card-sub">Tell us about your interest and we'll get back within 48 hours with a full proposal and impact projections.</div>
+      <form action="https://formspree.io/f/xwvajwyn" method="POST" id="sponsor-form">
+        <input type="hidden" name="form_source" value="Dr. GharoGhari Sponsorship">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Your Name *</label>
+            <input class="form-input" type="text" name="name" required placeholder="Full name">
+          </div>
+          <div class="form-field">
+            <label class="form-label">Organisation *</label>
+            <input class="form-input" type="text" name="organisation" required placeholder="Company name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Email *</label>
+            <input class="form-input" type="email" name="email" required placeholder="Work email">
+          </div>
+          <div class="form-field">
+            <label class="form-label">Phone</label>
+            <input class="form-input" type="tel" name="phone" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Sponsorship Interest</label>
+          <select class="form-select" name="sponsorship_type">
+            <option value="" disabled selected>What interests you?</option>
+            <option>Full Van Sponsorship (₹66.9 Lakhs / Year)</option>
+            <option>Monthly Operations (₹3.2 Lakhs / month)</option>
+            <option>Medical Staff Salaries</option>
+            <option>Medicines &amp; Diagnostics</option>
+            <option>Not sure — want more information</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Message</label>
+          <textarea class="form-input textarea" name="message" placeholder="Any questions, requirements, or context for your CSR committee..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Enquiry →</button>
+        <div class="form-note">We respond within 48 business hours. Your data will not be shared.</div>
+      </form>
+      <div class="form-success" id="form-success">
+        <div class="form-success-icon">✅</div>
+        <div class="form-success-title">Enquiry Received!</div>
+        <div class="form-success-desc">Thank you for your interest in sponsoring Dr. GharoGhari. We'll be in touch within 48 hours.<br><br>Email us directly: <a href="mailto:contact@choudhari.ngo" style="color:var(--blue);">contact@choudhari.ngo</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Choudhari <span>EduHealth</span><br>India Foundation</div>
+        <div class="footer-desc">A Section 8 Non-Profit delivering mobile healthcare and national blood access programmes across rural India since 2025.</div>
+        <div class="footer-reg">CIN: U88900MH2025NPL447942 · PAN: AAMCC7204M<br>NGO Darpan: MH/2025/0643345 · Sec 8 Lic: 168397<br>12A &amp; 80G: AAMCC7204MF20251</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Programmes</div>
+        <ul class="footer-col-links">
+          <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
+          <li><a href="bloodconnect.html">BloodConnect</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Organisation</div>
+        <ul class="footer-col-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#credentials">Credentials</a></li>
+          <li><a href="csr-partnership.html">CSR Partnership</a></li>
+          <li><a href="donate.html" style="color:var(--red);font-weight:600;">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="mailto:contact@choudhari.ngo">contact@choudhari.ngo</a></li>
+          <li><a href="https://choudhari.ngo">choudhari.ngo</a></li>
+          <li><a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank">Give.do ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Choudhari EduHealth India Foundation. All rights reserved.</div>
+      <div class="footer-80g">80G Certified · CSR Eligible · Schedule VII (i)</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('sponsor-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending…'; btn.disabled = true;
+      try {
+        const res = await fetch(form.action, { method:'POST', body: new FormData(form), headers:{ Accept:'application/json' } });
+        if (res.ok) { form.style.display='none'; document.getElementById('form-success').style.display='block'; }
+        else { btn.textContent = 'Error — please email us directly'; }
+      } catch { btn.textContent = 'Error — please email us directly'; }
+    });
+  }
+</script>
+</body>
+</html>
