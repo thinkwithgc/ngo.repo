@@ -7,17 +7,17 @@
 <meta name="description" content="A Section 8 NGO delivering mobile healthcare and voluntary blood access programmes across rural India. CSR-eligible under 80G. Partner with us.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy: #0B1929;
-    --navy-mid: #162840;
-    --blue: #0055CC;
-    --blue-light: #EEF3FB;
-    --blue-mid: #4D9EFF;
+    --navy: #2C2118;
+    --navy-mid: #38291C;
+    --blue: #3C7A5E;
+    --blue-light: #E6EEE4;
+    --blue-mid: #8FBBA3;
     --red: #CC2200;
     --red-light: #FEF0EE;
     --gray-50: #F4F6F9;
@@ -25,14 +25,14 @@
     --gray-400: #8A9BB0;
     --gray-600: #4A5B6E;
     --white: #FFFFFF;
-    --text-primary: #0B1929;
+    --text-primary: #2C2118;
     --text-secondary: #4A5B6E;
-    --font-display: 'Syne', sans-serif;
+    --font-display: 'Fraunces', Georgia, serif;
     --font-body: 'Instrument Sans', sans-serif;
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 16px;
-    --shadow-card: 0 1px 3px rgba(11,25,41,0.08), 0 4px 16px rgba(11,25,41,0.06);
+    --shadow-card: 0 1px 3px rgba(44,33,24,0.08), 0 4px 16px rgba(44,33,24,0.06);
     --transition: 0.2s ease;
   }
 
@@ -101,7 +101,7 @@
     transition: var(--transition);
     flex-shrink: 0;
   }
-  .nav-cta:hover { background: #0044aa; }
+  .nav-cta:hover { background: #2E6049; }
   .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
   .nav-hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
 
@@ -178,7 +178,7 @@
     transition: var(--transition);
     display: inline-block;
   }
-  .btn-primary:hover { background: #0044aa; }
+  .btn-primary:hover { background: #2E6049; }
   .btn-outline {
     background: white;
     border: 1.5px solid var(--gray-100);
@@ -203,14 +203,14 @@
     position: absolute;
     width: 200px; height: 200px;
     border-radius: 50%;
-    background: rgba(0,85,204,0.25);
+    background: rgba(60,122,94,0.25);
     top: -60px; right: -60px;
   }
   .hero-card-circle2 {
     position: absolute;
     width: 100px; height: 100px;
     border-radius: 50%;
-    background: rgba(0,85,204,0.15);
+    background: rgba(60,122,94,0.15);
     top: 20px; right: 20px;
   }
   .hero-card-label {
@@ -263,8 +263,8 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(0,85,204,0.2);
-    border: 1px solid rgba(77,158,255,0.3);
+    background: rgba(60,122,94,0.2);
+    border: 1px solid rgba(143,187,163,0.3);
     color: var(--blue-mid);
     font-size: 11px;
     font-weight: 500;
@@ -277,7 +277,7 @@
     content: '';
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: #22cc88;
+    background: #5BAE6B;
     animation: pulse 2s infinite;
   }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
@@ -480,7 +480,7 @@
     box-shadow: var(--shadow-card);
     transition: var(--transition);
   }
-  .prog-card:hover { box-shadow: 0 4px 24px rgba(11,25,41,0.12); transform: translateY(-2px); }
+  .prog-card:hover { box-shadow: 0 4px 24px rgba(44,33,24,0.12); transform: translateY(-2px); }
   .prog-card-top {
     height: 6px;
     background: var(--blue);
@@ -576,7 +576,7 @@
   .prog-status.active { background: #E8F7EE; color: #1A7A40; }
   .prog-status::before { content:''; width:6px;height:6px; border-radius:50%; }
   .prog-status.upcoming::before { background: #F5A623; }
-  .prog-status.active::before { background: #22cc66; animation: pulse 2s infinite; }
+  .prog-status.active::before { background: #5BAE6B; animation: pulse 2s infinite; }
 
   /* ─── CREDENTIALS ─── */
   .credentials { background: var(--navy); }
@@ -600,7 +600,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(0,85,204,0.25);
+    background: rgba(60,122,94,0.25);
     color: var(--blue-mid);
     font-size: 10px;
     font-weight: 700;
@@ -627,8 +627,8 @@
   .cred-note { font-size: 12px; color: rgba(255,255,255,0.4); }
   .cred-full {
     grid-column: 1 / -1;
-    background: rgba(0,85,204,0.1);
-    border: 1px solid rgba(0,85,204,0.25);
+    background: rgba(60,122,94,0.1);
+    border: 1px solid rgba(60,122,94,0.25);
     border-radius: var(--radius-md);
     padding: 24px 32px;
     display: flex;
@@ -785,7 +785,7 @@
     margin-top: 6px;
     transition: var(--transition);
   }
-  .csr-submit:hover { background: #0044aa; }
+  .csr-submit:hover { background: #2E6049; }
   .csr-contact-details { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
   .csr-contact-line { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
   .csr-contact-line a { color: var(--blue-mid); text-decoration: none; }
@@ -838,8 +838,8 @@
   .footer-copy a { color: rgba(255,255,255,0.4); text-decoration: none; }
   .footer-80g {
     font-size: 12px;
-    color: rgba(77,158,255,0.7);
-    background: rgba(0,85,204,0.15);
+    color: rgba(143,187,163,0.7);
+    background: rgba(60,122,94,0.15);
     padding: 6px 14px;
     border-radius: 100px;
     font-weight: 600;
@@ -885,8 +885,8 @@
     <a class="nav-logo" href="index.html">Choudhari <span>EduHealth</span><br>India Foundation</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="raktify.html">Raktify</a></li>
       <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
-      <li><a href="bloodconnect.html">BloodConnect</a></li>
       <li><a href="donate.html" style="color:var(--red); font-weight:600;">Donate</a></li>
       <li><a href="csr-partnership.html" class="nav-cta">CSR Partnership</a></li>
     </ul>
@@ -898,38 +898,38 @@
   <div class="hero-grid-bg"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow">Section 8 NGO — India</div>
-      <h1>Healthcare that reaches <span>where roads end.</span></h1>
-      <p class="hero-sub">We design and operate mobile health infrastructure and national voluntary blood networks for India's most underserved rural populations — bringing qualified doctors, diagnostics, and medicines directly to the doorstep.</p>
+      <div class="hero-eyebrow">Choudhari EduHealth Foundation · Section 8 NGO</div>
+      <h1>No one should die <span style="color:var(--red);">waiting for blood.</span></h1>
+      <p class="hero-sub">When a patient in rural India needs blood, the search can cost hours a life doesn't have. Our flagship programme <strong>Raktify</strong> is closing that gap — a free, nationwide network that connects voluntary donors to patients in time. It's our focus for 2026, with mobile rural healthcare as the next chapter.</p>
       <div class="hero-btns">
-        <a href="csr-partnership.html" class="btn-primary">Explore CSR Partnership →</a>
-        <a href="#programmes" class="btn-outline">Our Programmes</a>
+        <a href="https://r.give.do/JapPvIUZ" target="_blank" rel="noopener" class="btn-primary">Support Raktify ↗</a>
+        <a href="raktify.html" class="btn-outline">How Raktify Works</a>
       </div>
     </div>
     <div class="hero-card">
       <div class="hero-card-circle1"></div>
       <div class="hero-card-circle2"></div>
-      <div class="hero-card-label">Programme Reach — Phase 1 Pilot</div>
+      <div class="hero-card-label">Our 2026 Focus — Raktify</div>
       <div class="hero-card-stat">
-        <div class="hero-card-stat-n">52+</div>
-        <div class="hero-card-stat-l">Villages served per month (Phase 1)</div>
+        <div class="hero-card-stat-n">National</div>
+        <div class="hero-card-stat-l">Voluntary blood-donor network — live and growing</div>
       </div>
       <div class="hero-card-divider"></div>
       <div class="hero-card-row">
         <div>
-          <div class="hero-card-mini-n">350</div>
-          <div class="hero-card-mini-l">Patients / week</div>
+          <div class="hero-card-mini-n">100%</div>
+          <div class="hero-card-mini-l">Voluntary</div>
         </div>
         <div>
-          <div class="hero-card-mini-n">National</div>
-          <div class="hero-card-mini-l">BloodConnect</div>
+          <div class="hero-card-mini-n">₹0</div>
+          <div class="hero-card-mini-l">Cost to use</div>
         </div>
         <div>
-          <div class="hero-card-mini-n">∞</div>
-          <div class="hero-card-mini-l">Scalable model</div>
+          <div class="hero-card-mini-n">24×7</div>
+          <div class="hero-card-mini-l">Emergency ready</div>
         </div>
       </div>
-      <div class="hero-badge">Phase 1 Pilot Launching 2026</div>
+      <div class="hero-badge">Raktify — live on Give.do</div>
     </div>
   </div>
 </section>
@@ -938,20 +938,20 @@
 <div class="stats-bar">
   <div class="stats-bar-inner">
     <div class="stat-item">
-      <div class="stat-n">52+</div>
-      <div class="stat-l">Villages / month (Phase 1)</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-n">350</div>
-      <div class="stat-l">Patients / week</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-n">2</div>
-      <div class="stat-l">Flagship programmes</div>
-    </div>
-    <div class="stat-item">
       <div class="stat-n">National</div>
-      <div class="stat-l">BloodConnect Scope</div>
+      <div class="stat-l">Raktify donor network</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">100%</div>
+      <div class="stat-l">Voluntary donors</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">₹0</div>
+      <div class="stat-l">Cost to patients &amp; hospitals</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">Up to 3</div>
+      <div class="stat-l">Lives helped per donation</div>
     </div>
     <div class="stat-item">
       <div class="stat-n">80G</div>
@@ -968,29 +968,29 @@
         <div class="section-label">Our Mission</div>
         <h2 class="section-h">Born from a gap that<br>metro India never sees.</h2>
         <div class="mission-quote">"We built Choudhari EduHealth because the healthcare gap in rural India is invisible to those who live in cities — and that invisibility is the problem."</div>
-        <p class="mission-text">Established in May 2025, Choudhari EduHealth India Foundation was founded by two professionals rooted in technology and management who grew up witnessing the stark difference in healthcare access between urban and rural India.</p>
-        <p class="mission-text">Hundreds of millions of Indians live in villages where a qualified doctor visits once a month — if at all. Emergency blood needs go unmet because voluntary donor networks don't exist at scale. We are building the infrastructure to change that: starting on the ground, with measurable outcomes, and expanding across the country.</p>
+        <p class="mission-text">Established in May 2025, Choudhari EduHealth India Foundation was founded by two professionals rooted in technology and management — who grew up watching the same illness mean a routine clinic visit in the city and a life-threatening ordeal in the village. Closing that gap became our work.</p>
+        <p class="mission-text">In thousands of villages, a child's fever waits for a doctor who comes once a month. A mother in labour waits for blood that may not arrive in time. These are not rare tragedies — they are everyday arithmetic for rural India. We are building the infrastructure to rewrite that arithmetic: proven on the ground, measured honestly, and carried district by district until distance no longer decides who lives.</p>
       </div>
       <div class="mission-visual">
         <div class="mission-visual-item">
-          <div class="mission-icon">🏥</div>
+          <div class="mission-icon red">🩸</div>
           <div>
-            <div class="mission-item-title">Dr. GharoGhari — Mobile OPD</div>
-            <div class="mission-item-desc">A dual-shift mobile clinic van delivering free consultations, diagnostics and medicines to underserved villages — starting its pilot in rural India and scaling district by district.</div>
+            <div class="mission-item-title">Raktify — our flagship, live now</div>
+            <div class="mission-item-desc">A nationwide network of voluntary donors, ready before the emergency strikes — so that when a patient needs blood, the answer is already on its way, not hours of frantic searching. This is our primary focus for 2026.</div>
           </div>
         </div>
         <div class="mission-visual-item">
-          <div class="mission-icon red">🩸</div>
+          <div class="mission-icon">🏥</div>
           <div>
-            <div class="mission-item-title">BloodConnect — National Donor Network</div>
-            <div class="mission-item-desc">A nationwide voluntary blood donor coordination network connecting willing donors to patients in critical need — eliminating dangerous delays caused by the absence of organised blood access in rural areas.</div>
+            <div class="mission-item-title">Dr. GharoGhari — Mobile OPD, next phase</div>
+            <div class="mission-item-desc">A clinic on wheels bringing free consultations, diagnostics, and medicines to villages, morning and evening. In active development — it will roll out once Raktify is firmly established and funded.</div>
           </div>
         </div>
         <div class="mission-visual-item">
           <div class="mission-icon">📚</div>
           <div>
             <div class="mission-item-title">EduHealth Awareness</div>
-            <div class="mission-item-desc">Community health literacy campaigns, school health checkups, and preventive care sessions delivered alongside our mobile OPD operations.</div>
+            <div class="mission-item-desc">Health knowledge that travels with our work — donor drives, school checkups, and preventive-care sessions that help communities catch illness early, before it turns dangerous.</div>
           </div>
         </div>
       </div>
@@ -1037,19 +1037,72 @@
 <section class="section programmes" id="programmes">
   <div class="section-inner">
     <div class="section-label">Our Programmes</div>
-    <h2 class="section-h">Two initiatives. One mission.</h2>
-    <p class="section-sub">Each programme is designed with field-tested operational models, measurable KPIs, and full financial transparency — structured for CSR compliance and impact reporting.</p>
+    <h2 class="section-h">One focus now.<br>The next chapter ready.</h2>
+    <p class="section-sub">We believe in doing one thing exceptionally well before spreading thin. Raktify is our focus today — live, free, and growing. Dr. GharoGhari, our mobile-healthcare programme, is designed and waiting for the groundwork and funding to roll it out next.</p>
     <div class="programmes-grid">
+
+      <!-- Raktify -->
+      <div class="prog-card">
+        <div class="prog-card-top red"></div>
+        <div class="prog-card-body">
+          <div class="prog-status active">Active — Our 2026 Focus</div>
+          <div class="prog-type red">Blood Access · National Programme</div>
+          <div class="prog-title">Raktify</div>
+          <div class="prog-tagline red">"No patient should wait for blood."</div>
+          <div class="prog-desc">When a patient needs blood, time is the enemy. Raktify is a living network of voluntary donors — mapped by blood group and location, ready long before the call ever comes. The moment a hospital or family raises a need, the right donors nearby are reached in minutes. No commercial middlemen, no price on a human life, no family left searching from one city to the next. Built for national scale from day one, so help is never far from anyone.</div>
+
+          <div class="prog-details">
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Programme Scope</span>
+              <span class="prog-detail-val">National — Pan-India Rollout</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Model</span>
+              <span class="prog-detail-val">Voluntary Donor Coordination Network</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Coordination</span>
+              <span class="prog-detail-val">Real-time donor-patient matching</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Donor Commitment</span>
+              <span class="prog-detail-val">100% Voluntary — Zero commercial dependency</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Integration</span>
+              <span class="prog-detail-val">District hospitals, PHCs, community networks</span>
+            </div>
+            <div class="prog-detail-row">
+              <span class="prog-detail-key">Cost to Patient</span>
+              <span class="prog-detail-val">Zero</span>
+            </div>
+          </div>
+
+          <div class="prog-pills">
+            <div class="prog-pill red">Pan-India Network</div>
+            <div class="prog-pill red">Voluntary Donors</div>
+            <div class="prog-pill red">Real-time Coordination</div>
+            <div class="prog-pill red">Hospital Integration</div>
+            <div class="prog-pill red">Community-led</div>
+            <div class="prog-pill red">Zero Cost to Patient</div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:4px;">
+          <a href="raktify.html" class="prog-link red">Full Programme Details <div class="prog-link-arrow red">→</div></a>
+          <a href="https://r.give.do/JapPvIUZ" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; background:var(--red); color:white; font-size:13px; font-weight:600; padding:9px 16px; border-radius:6px; text-decoration:none;">Donate ↗</a>
+        </div>
+        </div>
+      </div>
 
       <!-- Dr. GharoGhari -->
       <div class="prog-card">
         <div class="prog-card-top"></div>
         <div class="prog-card-body">
-          <div class="prog-status upcoming">Launching — Phase 1 Pilot</div>
-          <div class="prog-type">Mobile Healthcare · Rural India (Expanding)</div>
+          <div class="prog-status upcoming">Future Phase — In Development</div>
+          <div class="prog-type">Mobile Healthcare · Planned Next Phase</div>
           <div class="prog-title">Dr. GharoGhari</div>
           <div class="prog-tagline">"The doctor who comes home"</div>
-          <div class="prog-desc">A fully-equipped mobile OPD van operating dual shifts — morning and evening — to match the real availability patterns of rural daily-wage workers and farming communities. Every working day, the van covers two villages, delivering free consultations, point-of-care diagnostics, and dispensed medicines to populations far from district hospitals. The model is built to replicate: one pilot van establishes the operational playbook, and each additional van extends coverage to a new district.</div>
+          <div class="prog-desc">Our next chapter. A fully-equipped medical van that reaches two villages every working day, running morning and evening shifts so daily-wage workers and farmers can be seen without losing a day's income — a qualified doctor, point-of-care diagnostics, and medicines, all free at the doorstep. The model is designed and costed; it needs dedicated funding and ground preparation before launch, and will roll out once Raktify is firmly established.</div>
 
           <div class="prog-details">
             <div class="prog-detail-row">
@@ -1090,59 +1143,6 @@
           <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:4px;">
           <a href="dr-gharoghari.html" class="prog-link">Full Programme Details <div class="prog-link-arrow">→</div></a>
           <a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; background:var(--blue); color:white; font-size:13px; font-weight:600; padding:9px 16px; border-radius:6px; text-decoration:none;">Donate ↗</a>
-        </div>
-        </div>
-      </div>
-
-      <!-- BloodConnect -->
-      <div class="prog-card">
-        <div class="prog-card-top red"></div>
-        <div class="prog-card-body">
-          <div class="prog-status active">Active Programme</div>
-          <div class="prog-type red">Blood Access · National Programme</div>
-          <div class="prog-title">BloodConnect</div>
-          <div class="prog-tagline red">"No patient should wait for blood."</div>
-          <div class="prog-desc">A technology-enabled voluntary donor coordination network designed to eliminate emergency blood shortages across India. BloodConnect connects willing voluntary donors to patients in critical need — building a live, community-powered blood access layer that reduces dangerous dependency on commercial blood banks and cuts life-threatening delays in areas where organised blood storage infrastructure is absent or unreliable. The programme is designed for national scale from day one, with simultaneous rollout across multiple locations.</div>
-
-          <div class="prog-details">
-            <div class="prog-detail-row">
-              <span class="prog-detail-key">Programme Scope</span>
-              <span class="prog-detail-val">National — Pan-India Rollout</span>
-            </div>
-            <div class="prog-detail-row">
-              <span class="prog-detail-key">Model</span>
-              <span class="prog-detail-val">Voluntary Donor Coordination Network</span>
-            </div>
-            <div class="prog-detail-row">
-              <span class="prog-detail-key">Coordination</span>
-              <span class="prog-detail-val">Real-time donor-patient matching</span>
-            </div>
-            <div class="prog-detail-row">
-              <span class="prog-detail-key">Donor Commitment</span>
-              <span class="prog-detail-val">100% Voluntary — Zero commercial dependency</span>
-            </div>
-            <div class="prog-detail-row">
-              <span class="prog-detail-key">Integration</span>
-              <span class="prog-detail-val">District hospitals, PHCs, community networks</span>
-            </div>
-            <div class="prog-detail-row">
-              <span class="prog-detail-key">Cost to Patient</span>
-              <span class="prog-detail-val">Zero</span>
-            </div>
-          </div>
-
-          <div class="prog-pills">
-            <div class="prog-pill red">Pan-India Network</div>
-            <div class="prog-pill red">Voluntary Donors</div>
-            <div class="prog-pill red">Real-time Coordination</div>
-            <div class="prog-pill red">Hospital Integration</div>
-            <div class="prog-pill red">Community-led</div>
-            <div class="prog-pill red">Zero Cost to Patient</div>
-          </div>
-
-          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:4px;">
-          <a href="bloodconnect.html" class="prog-link red">Full Programme Details <div class="prog-link-arrow red">→</div></a>
-          <a href="donate.html#direct-transfer" style="display:inline-flex; align-items:center; gap:6px; background:var(--red); color:white; font-size:13px; font-weight:600; padding:9px 16px; border-radius:6px; text-decoration:none;">Donate →</a>
         </div>
         </div>
       </div>
@@ -1242,13 +1242,13 @@
         <span class="team-tag">Leadership</span>
       </div>
       <div class="team-card">
-        <div class="team-avatar" style="background: #EEF3FB; color: var(--blue);">MA</div>
+        <div class="team-avatar" style="background: #E6EEE4; color: var(--blue);">MA</div>
         <div class="team-name">Dr. Shrikant Futane</div>
         <div class="team-role">Medical Advisor</div>
         <span class="team-tag" style="background:#E8F7EE; color:#1A7A40;">Medical</span>
       </div>
       <div class="team-card">
-        <div class="team-avatar" style="background: #EEF3FB; color: var(--blue);">LA</div>
+        <div class="team-avatar" style="background: #E6EEE4; color: var(--blue);">LA</div>
         <div class="team-name">Medico Legal Services LLP</div>
         <div class="team-role">Legal Advisor</div>
         <span class="team-tag" style="background:#FFF8E7; color:#916500;">Legal</span>
@@ -1265,21 +1265,38 @@
     <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; margin-bottom:44px;">
       <div>
         <div class="section-label" style="color:var(--blue-mid);"><span style="display:block;width:20px;height:2px;background:var(--blue-mid);"></span>Individual Donations</div>
-        <h2 class="section-h" style="color:white; margin-bottom:8px;">Support our work directly.</h2>
-        <p style="font-size:16px; color:rgba(255,255,255,0.55); max-width:500px; line-height:1.7;">Donate to either programme via Give.do, UPI, or bank transfer. 80G tax benefit on all contributions.</p>
+        <h2 class="section-h" style="color:white; margin-bottom:8px;">Your gift becomes care.</h2>
+        <p style="font-size:16px; color:rgba(255,255,255,0.55); max-width:500px; line-height:1.7;">Every contribution turns into something real on the ground — a consultation, a strip of medicine, a unit of blood reaching someone in time. Give via Give.do, UPI, or bank transfer; 80G tax benefit on all.</p>
       </div>
       <a href="donate.html" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:rgba(255,255,255,0.75); font-size:14px; font-weight:600; padding:12px 22px; border-radius:6px; text-decoration:none; white-space:nowrap; transition:0.2s ease;">View All Donation Options →</a>
     </div>
 
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px;">
 
+      <!-- Raktify donate card -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;">
+        <div style="height:4px; background:var(--red);"></div>
+        <div style="padding:28px;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E78C97; margin-bottom:12px;">National Blood Network · Our 2026 Focus</div>
+          <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:white; margin-bottom:6px;">Raktify</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65; margin-bottom:20px;">Help build the network that finds a donor before a family ever has to beg for one. Around ₹1,000 can carry one emergency request end-to-end; ₹50,000 helps onboard a whole community of donors and hospitals.</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹1,000</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹5,000</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹10,000</span>
+            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹50,000</span>
+          </div>
+          <a href="https://r.give.do/JapPvIUZ" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:8px; background:var(--red); color:white; padding:13px; border-radius:6px; font-size:14px; font-weight:600; text-decoration:none;">Donate via Give.do ↗</a>
+        </div>
+      </div>
+
       <!-- Dr. GharoGhari donate card -->
       <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;">
         <div style="height:4px; background:var(--blue);"></div>
         <div style="padding:28px;">
-          <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:12px;">Mobile OPD · Give.do Live</div>
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:12px;">Mobile OPD · Next Phase</div>
           <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:white; margin-bottom:6px;">Dr. GharoGhari</div>
-          <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65; margin-bottom:20px;">₹500 covers one full OPD consultation with medicines. ₹25,000 funds an entire day of operations — two villages, 50+ patients.</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65; margin-bottom:20px;">Our next chapter — mobile healthcare for rural villages. A gift here helps seed the groundwork so the first van can launch once Raktify is firmly established.</div>
           <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
             <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹500</span>
             <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹2,000</span>
@@ -1287,23 +1304,6 @@
             <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹25,000</span>
           </div>
           <a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:8px; background:var(--blue); color:white; padding:13px; border-radius:6px; font-size:14px; font-weight:600; text-decoration:none;">Donate via Give.do ↗</a>
-        </div>
-      </div>
-
-      <!-- BloodConnect donate card -->
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;">
-        <div style="height:4px; background:var(--red);"></div>
-        <div style="padding:28px;">
-          <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#F08080; margin-bottom:12px;">National Blood Network · Give.do Coming Soon</div>
-          <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:white; margin-bottom:6px;">BloodConnect</div>
-          <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65; margin-bottom:20px;">Fund the technology platform and coordinator network that connects voluntary blood donors to patients in critical need — at zero cost to the patient, anywhere in India.</div>
-          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
-            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹1,000</span>
-            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹5,000</span>
-            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹10,000</span>
-            <span style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.75); font-size:13px; font-weight:600; padding:8px 14px; border-radius:6px;">₹50,000</span>
-          </div>
-          <a href="donate.html#direct-transfer" style="display:flex; align-items:center; justify-content:center; gap:8px; background:var(--red); color:white; padding:13px; border-radius:6px; font-size:14px; font-weight:600; text-decoration:none;">Donate via Bank Transfer ↓</a>
         </div>
       </div>
 
@@ -1327,8 +1327,8 @@
   <div class="csr-inner">
     <div>
       <div class="section-label">CSR Partnership</div>
-      <h2 class="section-h">Partner with us.<br>Make it count on paper.</h2>
-      <p class="section-sub" style="margin-bottom: 0;">Your CSR funds, deployed through Choudhari EduHealth, go directly into field operations with full financial transparency, geo-tagged impact reporting, and 80G tax compliance documentation.</p>
+      <h2 class="section-h">Partner with us.<br>Build something that lasts.</h2>
+      <p class="section-sub" style="margin-bottom: 0;">Your CSR budget can be a line item — or it can be a van that reaches a forgotten village and a donor network that saves a stranger. Funds deployed through Choudhari EduHealth go straight to the field, with transparent, geo-tagged impact reporting and full 80G documentation.</p>
       <div class="csr-why-list">
         <div class="csr-why-item">
           <div class="csr-check">✓</div>
@@ -1402,47 +1402,38 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Choudhari <span>EduHealth</span><br>India Foundation</div>
-        <div class="footer-desc">A Section 8 Non-Profit delivering mobile healthcare and national blood access programmes across rural India since 2025. Built by technology professionals with a mission rooted in ground reality.</div>
-        <div class="footer-reg">
-          CIN: U88900MH2025NPL447942<br>
-          PAN: AAMCC7204M<br>
-          NGO Darpan: MH/2025/0643345<br>
-          Section 8 Licence: 168397<br>
-          12A &amp; 80G Ref: AAMCC7204MF20251
-        </div>
+        <div class="footer-desc">A Section 8 non-profit building Raktify — India's free, voluntary blood-donor network — so no patient waits for blood. Mobile rural healthcare follows as our next chapter.</div>
+        <div class="footer-reg">CIN: U88900MH2025NPL447942<br>PAN: AAMCC7204M &middot; Sec 8 Lic: 168397<br>NGO Darpan: MH/2025/0643345<br>12A &amp; 80G: AAMCC7204MF20251</div>
       </div>
       <div>
         <div class="footer-col-title">Programmes</div>
         <ul class="footer-col-links">
-          <li><a href="dr-gharoghari.html">Dr. GharoGhari</a></li>
-          <li><a href="bloodconnect.html">BloodConnect</a></li>
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="csr-partnership.html">CSR Partnership</a></li>
+          <li><a href="raktify.html">Raktify — Blood Network</a></li>
+          <li><a href="dr-gharoghari.html">Dr. GharoGhari — Mobile OPD</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Organisation</div>
+        <div class="footer-col-title">Get Involved</div>
         <ul class="footer-col-links">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#team">Our Team</a></li>
-          <li><a href="#credentials">Legal &amp; Credentials</a></li>
+          <li><a href="https://r.give.do/JapPvIUZ" target="_blank" rel="noopener">Donate to Raktify ↗</a></li>
+          <li><a href="raktify.html#register">Register as a Donor</a></li>
           <li><a href="csr-partnership.html">CSR Partnership</a></li>
-          <li><a href="donate.html">Donate</a></li>
+          <li><a href="donate.html">All Ways to Give</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Contact</div>
         <ul class="footer-col-links">
           <li><a href="mailto:contact@choudhari.ngo">contact@choudhari.ngo</a></li>
-          <li><a href="mailto:info@choudhari.ngo">info@choudhari.ngo</a></li>
+          <li><a href="tel:+919850541412">+91 98505 41412</a></li>
           <li><a href="https://choudhari.ngo">choudhari.ngo</a></li>
-          <li><a href="https://give.do/fundraisers/68a5aa2ba27293517f5c2f7f" target="_blank">Give.do ↗</a></li>
+          <li style="color:rgba(255,255,255,0.5); line-height:1.6;">54, 2nd Lane, Rathi Nagar,<br>VMV Road, Amravati,<br>Maharashtra 444603</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 Choudhari EduHealth India Foundation. All rights reserved. | <a href="#">Privacy Policy</a></div>
-      <div class="footer-80g">80G Certified · CSR Eligible · Schedule VII (i)</div>
+      <div class="footer-copy">&copy; 2026 Choudhari EduHealth India Foundation. All rights reserved.</div>
+      <div class="footer-80g">80G Certified &middot; CSR Eligible &middot; Schedule VII (i)</div>
     </div>
   </div>
 </footer>
